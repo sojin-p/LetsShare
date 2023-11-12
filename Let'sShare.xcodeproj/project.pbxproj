@@ -14,6 +14,10 @@
 		23CACC192B00E7D7008AC1DD /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 23CACC172B00E7D7008AC1DD /* LaunchScreen.storyboard */; };
 		23CACC252B00FCD6008AC1DD /* Color.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23CACC242B00FCD6008AC1DD /* Color.swift */; };
 		23CACC282B00FEAD008AC1DD /* BaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23CACC272B00FEAD008AC1DD /* BaseViewController.swift */; };
+		23CACC2C2B010327008AC1DD /* SnapKit in Frameworks */ = {isa = PBXBuildFile; productRef = 23CACC2B2B010327008AC1DD /* SnapKit */; };
+		23CACC2F2B010350008AC1DD /* TextFieldEffects in Frameworks */ = {isa = PBXBuildFile; productRef = 23CACC2E2B010350008AC1DD /* TextFieldEffects */; };
+		23CACC322B010376008AC1DD /* RxCocoa in Frameworks */ = {isa = PBXBuildFile; productRef = 23CACC312B010376008AC1DD /* RxCocoa */; };
+		23CACC342B010376008AC1DD /* RxSwift in Frameworks */ = {isa = PBXBuildFile; productRef = 23CACC332B010376008AC1DD /* RxSwift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -33,6 +37,10 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				23CACC322B010376008AC1DD /* RxCocoa in Frameworks */,
+				23CACC2C2B010327008AC1DD /* SnapKit in Frameworks */,
+				23CACC342B010376008AC1DD /* RxSwift in Frameworks */,
+				23CACC2F2B010350008AC1DD /* TextFieldEffects in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -118,6 +126,12 @@
 			dependencies = (
 			);
 			name = "Let'sShare";
+			packageProductDependencies = (
+				23CACC2B2B010327008AC1DD /* SnapKit */,
+				23CACC2E2B010350008AC1DD /* TextFieldEffects */,
+				23CACC312B010376008AC1DD /* RxCocoa */,
+				23CACC332B010376008AC1DD /* RxSwift */,
+			);
 			productName = "Let'sShare";
 			productReference = 23CACC092B00E7B9008AC1DD /* Let'sShare.app */;
 			productType = "com.apple.product-type.application";
@@ -146,6 +160,11 @@
 				Base,
 			);
 			mainGroup = 23CACC002B00E7B9008AC1DD;
+			packageReferences = (
+				23CACC2A2B010327008AC1DD /* XCRemoteSwiftPackageReference "SnapKit" */,
+				23CACC2D2B01034F008AC1DD /* XCRemoteSwiftPackageReference "TextFieldEffects" */,
+				23CACC302B010375008AC1DD /* XCRemoteSwiftPackageReference "RxSwift" */,
+			);
 			productRefGroup = 23CACC0A2B00E7B9008AC1DD /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -397,6 +416,56 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		23CACC2A2B010327008AC1DD /* XCRemoteSwiftPackageReference "SnapKit" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/SnapKit/SnapKit.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 5.6.0;
+			};
+		};
+		23CACC2D2B01034F008AC1DD /* XCRemoteSwiftPackageReference "TextFieldEffects" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/raulriera/TextFieldEffects.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 1.7.0;
+			};
+		};
+		23CACC302B010375008AC1DD /* XCRemoteSwiftPackageReference "RxSwift" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/ReactiveX/RxSwift.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 6.6.0;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		23CACC2B2B010327008AC1DD /* SnapKit */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 23CACC2A2B010327008AC1DD /* XCRemoteSwiftPackageReference "SnapKit" */;
+			productName = SnapKit;
+		};
+		23CACC2E2B010350008AC1DD /* TextFieldEffects */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 23CACC2D2B01034F008AC1DD /* XCRemoteSwiftPackageReference "TextFieldEffects" */;
+			productName = TextFieldEffects;
+		};
+		23CACC312B010376008AC1DD /* RxCocoa */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 23CACC302B010375008AC1DD /* XCRemoteSwiftPackageReference "RxSwift" */;
+			productName = RxCocoa;
+		};
+		23CACC332B010376008AC1DD /* RxSwift */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 23CACC302B010375008AC1DD /* XCRemoteSwiftPackageReference "RxSwift" */;
+			productName = RxSwift;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = 23CACC012B00E7B9008AC1DD /* Project object */;
 }
