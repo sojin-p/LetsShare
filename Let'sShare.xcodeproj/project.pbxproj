@@ -12,12 +12,13 @@
 		23CACC112B00E7B9008AC1DD /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23CACC102B00E7B9008AC1DD /* LoginViewController.swift */; };
 		23CACC162B00E7D7008AC1DD /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 23CACC152B00E7D7008AC1DD /* Assets.xcassets */; };
 		23CACC192B00E7D7008AC1DD /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 23CACC172B00E7D7008AC1DD /* LaunchScreen.storyboard */; };
-		23CACC252B00FCD6008AC1DD /* Color.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23CACC242B00FCD6008AC1DD /* Color.swift */; };
+		23CACC252B00FCD6008AC1DD /* Color+Enum.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23CACC242B00FCD6008AC1DD /* Color+Enum.swift */; };
 		23CACC282B00FEAD008AC1DD /* BaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23CACC272B00FEAD008AC1DD /* BaseViewController.swift */; };
 		23CACC2C2B010327008AC1DD /* SnapKit in Frameworks */ = {isa = PBXBuildFile; productRef = 23CACC2B2B010327008AC1DD /* SnapKit */; };
 		23CACC2F2B010350008AC1DD /* TextFieldEffects in Frameworks */ = {isa = PBXBuildFile; productRef = 23CACC2E2B010350008AC1DD /* TextFieldEffects */; };
 		23CACC322B010376008AC1DD /* RxCocoa in Frameworks */ = {isa = PBXBuildFile; productRef = 23CACC312B010376008AC1DD /* RxCocoa */; };
 		23CACC342B010376008AC1DD /* RxSwift in Frameworks */ = {isa = PBXBuildFile; productRef = 23CACC332B010376008AC1DD /* RxSwift */; };
+		23CACC362B01059B008AC1DD /* Image+Enum.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23CACC352B01059B008AC1DD /* Image+Enum.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -28,8 +29,9 @@
 		23CACC152B00E7D7008AC1DD /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		23CACC182B00E7D7008AC1DD /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		23CACC1A2B00E7D7008AC1DD /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		23CACC242B00FCD6008AC1DD /* Color.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Color.swift; sourceTree = "<group>"; };
+		23CACC242B00FCD6008AC1DD /* Color+Enum.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Color+Enum.swift"; sourceTree = "<group>"; };
 		23CACC272B00FEAD008AC1DD /* BaseViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseViewController.swift; sourceTree = "<group>"; };
+		23CACC352B01059B008AC1DD /* Image+Enum.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Image+Enum.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -89,7 +91,8 @@
 		23CACC212B00FCA3008AC1DD /* Utility */ = {
 			isa = PBXGroup;
 			children = (
-				23CACC242B00FCD6008AC1DD /* Color.swift */,
+				23CACC242B00FCD6008AC1DD /* Color+Enum.swift */,
+				23CACC352B01059B008AC1DD /* Image+Enum.swift */,
 			);
 			path = Utility;
 			sourceTree = "<group>";
@@ -193,8 +196,9 @@
 			files = (
 				23CACC282B00FEAD008AC1DD /* BaseViewController.swift in Sources */,
 				23CACC112B00E7B9008AC1DD /* LoginViewController.swift in Sources */,
-				23CACC252B00FCD6008AC1DD /* Color.swift in Sources */,
+				23CACC252B00FCD6008AC1DD /* Color+Enum.swift in Sources */,
 				23CACC0D2B00E7B9008AC1DD /* AppDelegate.swift in Sources */,
+				23CACC362B01059B008AC1DD /* Image+Enum.swift in Sources */,
 				23CACC0F2B00E7B9008AC1DD /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
