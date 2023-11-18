@@ -65,6 +65,10 @@ final class LoginViewController: BaseViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        DispatchQueue.main.async {
+            self.emailTextField.becomeFirstResponder()
+        }
+        
         bind()
         
     }
