@@ -18,24 +18,9 @@ final class LoginViewController: BaseViewController {
         return view
     }()
     
-    let containerView = {
-        let view = UIView()
-        view.backgroundColor = .white
-        view.layer.cornerRadius = 15
-        view.layer.shadowColor = UIColor.lightGray.cgColor
-        view.layer.shadowOffset = .zero
-        view.layer.shadowRadius = 5
-        view.layer.shadowOpacity = 0.3
-        return view
-    }()
+    let containerView = WhiteAndShadowContainerView()
     
-    let emailTextField = {
-        let view = HoshiTextField(frame: .zero)
-        view.placeholder = "EMAIL"
-        view.placeholderColor = Color.Point.navy
-        view.keyboardType = .emailAddress
-        return view
-    }()
+    let emailTextField = PointColorHoshiTextField(placeholder: "EMAIL", keyboardType: .emailAddress, isSecure: false)
     
     var emailResultLabel = {
         let view = UILabel()
@@ -44,13 +29,7 @@ final class LoginViewController: BaseViewController {
         return view
     }()
     
-    let passwordTextField = {
-        let view = HoshiTextField(frame: .zero)
-        view.placeholder = "PASSWORD"
-        view.placeholderColor = Color.Point.navy
-        view.isSecureTextEntry = true
-        return view
-    }()
+    let passwordTextField = PointColorHoshiTextField(placeholder: "PASSWORD", keyboardType: .default, isSecure: true)
     
     let passwordResultLabel = {
         let view = UILabel()
