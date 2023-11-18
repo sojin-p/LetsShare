@@ -19,6 +19,7 @@
 		23CACC322B010376008AC1DD /* RxCocoa in Frameworks */ = {isa = PBXBuildFile; productRef = 23CACC312B010376008AC1DD /* RxCocoa */; };
 		23CACC342B010376008AC1DD /* RxSwift in Frameworks */ = {isa = PBXBuildFile; productRef = 23CACC332B010376008AC1DD /* RxSwift */; };
 		23CACC362B01059B008AC1DD /* Image+Enum.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23CACC352B01059B008AC1DD /* Image+Enum.swift */; };
+		23FD161A2B0898F600D16409 /* ValidationError+Enum.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23FD16192B0898F600D16409 /* ValidationError+Enum.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -32,6 +33,7 @@
 		23CACC242B00FCD6008AC1DD /* Color+Enum.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Color+Enum.swift"; sourceTree = "<group>"; };
 		23CACC272B00FEAD008AC1DD /* BaseViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseViewController.swift; sourceTree = "<group>"; };
 		23CACC352B01059B008AC1DD /* Image+Enum.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Image+Enum.swift"; sourceTree = "<group>"; };
+		23FD16192B0898F600D16409 /* ValidationError+Enum.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ValidationError+Enum.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -93,6 +95,7 @@
 			children = (
 				23CACC242B00FCD6008AC1DD /* Color+Enum.swift */,
 				23CACC352B01059B008AC1DD /* Image+Enum.swift */,
+				23FD16192B0898F600D16409 /* ValidationError+Enum.swift */,
 			);
 			path = Utility;
 			sourceTree = "<group>";
@@ -195,6 +198,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				23CACC282B00FEAD008AC1DD /* BaseViewController.swift in Sources */,
+				23FD161A2B0898F600D16409 /* ValidationError+Enum.swift in Sources */,
 				23CACC112B00E7B9008AC1DD /* LoginViewController.swift in Sources */,
 				23CACC252B00FCD6008AC1DD /* Color+Enum.swift in Sources */,
 				23CACC0D2B00E7B9008AC1DD /* AppDelegate.swift in Sources */,
