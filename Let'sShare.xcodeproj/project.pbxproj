@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		236D14F92B08ECA400665205 /* SignUpViewConroller.swift in Sources */ = {isa = PBXBuildFile; fileRef = 236D14F82B08ECA400665205 /* SignUpViewConroller.swift */; };
 		23CACC0D2B00E7B9008AC1DD /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23CACC0C2B00E7B9008AC1DD /* AppDelegate.swift */; };
 		23CACC0F2B00E7B9008AC1DD /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23CACC0E2B00E7B9008AC1DD /* SceneDelegate.swift */; };
 		23CACC112B00E7B9008AC1DD /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23CACC102B00E7B9008AC1DD /* LoginViewController.swift */; };
@@ -24,6 +25,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		236D14F82B08ECA400665205 /* SignUpViewConroller.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpViewConroller.swift; sourceTree = "<group>"; };
 		23CACC092B00E7B9008AC1DD /* Let'sShare.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Let'sShare.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		23CACC0C2B00E7B9008AC1DD /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		23CACC0E2B00E7B9008AC1DD /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -53,6 +55,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		236D14F72B08EC6C00665205 /* SignUp */ = {
+			isa = PBXGroup;
+			children = (
+				236D14F82B08ECA400665205 /* SignUpViewConroller.swift */,
+			);
+			path = SignUp;
+			sourceTree = "<group>";
+		};
 		23CACC002B00E7B9008AC1DD = {
 			isa = PBXGroup;
 			children = (
@@ -88,6 +98,7 @@
 			children = (
 				23CACC262B00FE83008AC1DD /* Base */,
 				23CACC292B00FEF1008AC1DD /* Login */,
+				236D14F72B08EC6C00665205 /* SignUp */,
 			);
 			path = Scene;
 			sourceTree = "<group>";
@@ -205,6 +216,7 @@
 				23CACC112B00E7B9008AC1DD /* LoginViewController.swift in Sources */,
 				23CACC252B00FCD6008AC1DD /* Color+Enum.swift in Sources */,
 				23FD161C2B08CE0500D16409 /* LoginViewModel.swift in Sources */,
+				236D14F92B08ECA400665205 /* SignUpViewConroller.swift in Sources */,
 				23CACC0D2B00E7B9008AC1DD /* AppDelegate.swift in Sources */,
 				23CACC362B01059B008AC1DD /* Image+Enum.swift in Sources */,
 				23CACC0F2B00E7B9008AC1DD /* SceneDelegate.swift in Sources */,
