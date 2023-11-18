@@ -11,6 +11,7 @@ enum Color {
     
     enum Point {
         static let navy = UIColor(resource: .pointNavy)
+        static let yellow = UIColor(resource: .pointYellow)
     }
     
     enum Background {
