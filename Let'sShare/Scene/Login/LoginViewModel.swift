@@ -29,9 +29,9 @@ class LoginViewModel {
     
     func transform(input: Input) -> Output {
         
-        let email = checkValidation(input: input.emailText, valid: .invalidEmail, errorMessage: LoginValidationError.invalidEmail.errorMessage)
+        let email = checkValidation(input: input.emailText, valid: .invalidEmail, errorMessage: LoginValidationError.invalidEmail.errorMessage, label: emailErrorMessage)
         
-        let password = checkValidation(input: input.passwordText, valid: .invalidPassword, errorMessage: LoginValidationError.invalidPassword.errorMessage)
+        let password = checkValidation(input: input.passwordText, valid: .invalidPassword, errorMessage: LoginValidationError.invalidPassword.errorMessage, label: passwordErrorMessage)
         
         let validation = Observable.combineLatest(email, password) { email, password in
             return email && password
@@ -46,7 +46,7 @@ class LoginViewModel {
         
     }
     
-    func checkValidation(input: ControlProperty<String?>, valid: LoginValidationError, errorMessage: String) -> Observable<Bool> {
+    func checkValidation(input: ControlProperty<String?>, valid: LoginValidationError, errorMessage: String, label: PublishRelay<String>) -> Observable<Bool> {
         let result = input.orEmpty
             .map { text in
                 do {
@@ -54,7 +54,7 @@ class LoginViewModel {
                     return result
                 } catch {
                     if text.count > 1 {
-                        self.emailErrorMessage.accept(errorMessage)
+                        label.accept(errorMessage)
                     }
                     return false
                 }
