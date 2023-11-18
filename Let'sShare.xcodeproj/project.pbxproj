@@ -20,6 +20,7 @@
 		23CACC342B010376008AC1DD /* RxSwift in Frameworks */ = {isa = PBXBuildFile; productRef = 23CACC332B010376008AC1DD /* RxSwift */; };
 		23CACC362B01059B008AC1DD /* Image+Enum.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23CACC352B01059B008AC1DD /* Image+Enum.swift */; };
 		23FD161A2B0898F600D16409 /* ValidationError+Enum.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23FD16192B0898F600D16409 /* ValidationError+Enum.swift */; };
+		23FD161C2B08CE0500D16409 /* LoginViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23FD161B2B08CE0400D16409 /* LoginViewModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -34,6 +35,7 @@
 		23CACC272B00FEAD008AC1DD /* BaseViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseViewController.swift; sourceTree = "<group>"; };
 		23CACC352B01059B008AC1DD /* Image+Enum.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Image+Enum.swift"; sourceTree = "<group>"; };
 		23FD16192B0898F600D16409 /* ValidationError+Enum.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ValidationError+Enum.swift"; sourceTree = "<group>"; };
+		23FD161B2B08CE0400D16409 /* LoginViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -112,6 +114,7 @@
 			isa = PBXGroup;
 			children = (
 				23CACC102B00E7B9008AC1DD /* LoginViewController.swift */,
+				23FD161B2B08CE0400D16409 /* LoginViewModel.swift */,
 			);
 			path = Login;
 			sourceTree = "<group>";
@@ -201,6 +204,7 @@
 				23FD161A2B0898F600D16409 /* ValidationError+Enum.swift in Sources */,
 				23CACC112B00E7B9008AC1DD /* LoginViewController.swift in Sources */,
 				23CACC252B00FCD6008AC1DD /* Color+Enum.swift in Sources */,
+				23FD161C2B08CE0500D16409 /* LoginViewModel.swift in Sources */,
 				23CACC0D2B00E7B9008AC1DD /* AppDelegate.swift in Sources */,
 				23CACC362B01059B008AC1DD /* Image+Enum.swift in Sources */,
 				23CACC0F2B00E7B9008AC1DD /* SceneDelegate.swift in Sources */,
