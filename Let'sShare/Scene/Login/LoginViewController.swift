@@ -30,18 +30,31 @@ final class LoginViewController: BaseViewController {
     let emailTextField = {
         let view = HoshiTextField(frame: .zero)
         view.placeholder = "EMAIL"
-        view.borderActiveColor = .systemGray4
-        view.borderInactiveColor = Color.Point.navy
-        
+        view.placeholderColor = Color.Point.navy
+        return view
+    }()
+    
+    let emailResultLabel = {
+        let view = UILabel()
+        view.text = "이메일 형식(abc@de.fg)으로 입력해 주세요."
+        view.font = .systemFont(ofSize: 12, weight: .regular)
+        view.textColor = .red
         return view
     }()
     
     let passwordTextField = {
         let view = HoshiTextField(frame: .zero)
         view.placeholder = "PASSWORD"
-        view.borderActiveColor = .systemGray4
-        view.borderInactiveColor = Color.Point.navy
+        view.placeholderColor = Color.Point.navy
         view.isSecureTextEntry = true
+        return view
+    }()
+    
+    let passwordResultLabel = {
+        let view = UILabel()
+        view.text = "이메일 형식(abc@de.fg)으로 입력해 주세요."
+        view.font = .systemFont(ofSize: 12, weight: .regular)
+        view.textColor = .red
         return view
     }()
     
@@ -74,7 +87,7 @@ final class LoginViewController: BaseViewController {
         super.configure()
         
         [iconImageView, containerView, finePasswordLabel].forEach { view.addSubview($0) }
-        [emailTextField, passwordTextField, loginButton].forEach { containerView.addSubview($0) }
+        [emailTextField, emailResultLabel, passwordTextField, passwordResultLabel, loginButton].forEach { containerView.addSubview($0) }
     }
     
     override func setConstraints() {
@@ -86,7 +99,7 @@ final class LoginViewController: BaseViewController {
         }
         
         iconImageView.snp.makeConstraints { make in
-            make.size.equalTo(95)
+            make.size.equalTo(90)
             make.bottom.equalTo(containerView.snp.top).offset(-35)
             make.centerX.equalTo(containerView)
         }
@@ -97,10 +110,20 @@ final class LoginViewController: BaseViewController {
             make.height.equalTo(60)
         }
         
+        emailResultLabel.snp.makeConstraints { make in
+            make.top.equalTo(emailTextField.snp.bottom).offset(4)
+            make.horizontalEdges.equalTo(emailTextField)
+        }
+        
         passwordTextField.snp.makeConstraints { make in
-            make.top.equalTo(emailTextField.snp.bottom).offset(12)
+            make.top.equalTo(emailTextField.snp.bottom).offset(16)
             make.horizontalEdges.equalTo(emailTextField)
             make.height.equalTo(emailTextField)
+        }
+        
+        passwordResultLabel.snp.makeConstraints { make in
+            make.top.equalTo(passwordTextField.snp.bottom).offset(2)
+            make.horizontalEdges.equalTo(passwordTextField)
         }
         
         loginButton.snp.makeConstraints { make in
