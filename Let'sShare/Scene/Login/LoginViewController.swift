@@ -36,9 +36,8 @@ final class LoginViewController: BaseViewController {
         return view
     }()
     
-    let emailResultLabel = {
+    var emailResultLabel = {
         let view = UILabel()
-        view.text = "이메일 형식(abc@de.fg)으로 입력해 주세요."
         view.font = .systemFont(ofSize: 12, weight: .regular)
         view.textColor = .red
         return view
@@ -54,7 +53,6 @@ final class LoginViewController: BaseViewController {
     
     let passwordResultLabel = {
         let view = UILabel()
-        view.text = "이메일 형식(abc@de.fg)으로 입력해 주세요."
         view.font = .systemFont(ofSize: 12, weight: .regular)
         view.textColor = .red
         return view
@@ -85,7 +83,9 @@ final class LoginViewController: BaseViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        
         bind()
+        
     }
     
     func bind() {
@@ -96,7 +96,11 @@ final class LoginViewController: BaseViewController {
                     let result = try self.checkLoginValidation(text: email, valid: .invalidEmail)
                     return true
                 } catch {
-                    print(LoginValidationError.invalidEmail.errorMessage)
+                    if email.count > 1 {
+                        self.emailResultLabel.text = LoginValidationError.invalidEmail.errorMessage
+                    } else if email.count == 0 {
+                        self.emailResultLabel.isHidden = true
+                    }
                     return false
                 }
             }
@@ -107,7 +111,11 @@ final class LoginViewController: BaseViewController {
                     let result = try self.checkLoginValidation(text: password, valid: .invalidPassword)
                     return true
                 } catch {
-                    print(LoginValidationError.invalidPassword.errorMessage)
+                    if password.count > 1 {
+                        self.passwordResultLabel.text = LoginValidationError.invalidPassword.errorMessage
+                    } else if password.count == 0 {
+                        self.passwordResultLabel.isHidden = true
+                    }
                     return false
                 }
             }
@@ -117,6 +125,7 @@ final class LoginViewController: BaseViewController {
                 let color = bool ? Color.Point.yellow : UIColor.systemGray4
                 owner.emailTextField.borderActiveColor = color
                 owner.emailTextField.borderInactiveColor = color
+                owner.emailResultLabel.isHidden = bool
             }
             .disposed(by: disposeBag)
         
@@ -125,6 +134,7 @@ final class LoginViewController: BaseViewController {
                 let color = bool ? Color.Point.yellow : UIColor.systemGray4
                 owner.passwordTextField.borderActiveColor = color
                 owner.passwordTextField.borderInactiveColor = color
+                owner.passwordResultLabel.isHidden = bool
             }
             .disposed(by: disposeBag)
         
