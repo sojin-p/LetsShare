@@ -7,6 +7,8 @@
 
 import UIKit
 import TextFieldEffects
+import RxSwift
+import RxCocoa
 
 final class LoginViewController: BaseViewController {
     
@@ -78,9 +80,78 @@ final class LoginViewController: BaseViewController {
         view.textAlignment = .right
         return view
     }()
+    
+    let disposeBag = DisposeBag()
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        bind()
+    }
+    
+    func bind() {
+        
+        let email = emailTextField.rx.text.orEmpty
+            .map { email -> Bool in
+                do {
+                    let result = try self.checkLoginValidation(text: email, valid: .invalidEmail)
+                    return true
+                } catch {
+                    print(LoginValidationError.invalidEmail.errorMessage)
+                    return false
+                }
+            }
+        
+        let password = passwordTextField.rx.text.orEmpty
+            .map { password in
+                do {
+                    let result = try self.checkLoginValidation(text: password, valid: .invalidPassword)
+                    return true
+                } catch {
+                    print(LoginValidationError.invalidPassword.errorMessage)
+                    return false
+                }
+            }
+        
+        email
+            .bind(with: self) { owner, bool in
+                let color = bool ? Color.Point.yellow : UIColor.systemGray4
+                owner.emailTextField.borderActiveColor = color
+                owner.emailTextField.borderInactiveColor = color
+            }
+            .disposed(by: disposeBag)
+        
+        password
+            .bind(with: self) { owner, bool in
+                let color = bool ? Color.Point.yellow : UIColor.systemGray4
+                owner.passwordTextField.borderActiveColor = color
+                owner.passwordTextField.borderInactiveColor = color
+            }
+            .disposed(by: disposeBag)
+        
+        let validation = Observable.combineLatest(email, password) { email, password in
+            return email && password
+        }
+        
+        validation
+            .bind(to: loginButton.rx.isEnabled)
+            .disposed(by: disposeBag)
+        
+        validation
+            .bind(with: self) { owner, bool in
+                let color = bool ? Color.Point.navy : UIColor.systemGray4
+                owner.loginButton.configuration?.baseBackgroundColor = color
+            }
+            .disposed(by: disposeBag)
+        
+    }
+
+    func checkLoginValidation(text: String, valid: LoginValidationError) throws -> Bool {
+        let isValid = text.range(of: valid.regex, options: .regularExpression) != nil
+        if isValid {
+            return true
+        } else {
+            throw valid
+        }
     }
     
     override func configure() {
