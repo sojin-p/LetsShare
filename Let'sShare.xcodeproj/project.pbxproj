@@ -122,8 +122,8 @@
 		23CACC202B00E969008AC1DD /* Scene */ = {
 			isa = PBXGroup;
 			children = (
-				236D15012B09185400665205 /* Welcome */,
 				23CACC262B00FE83008AC1DD /* Base */,
+				236D15012B09185400665205 /* Welcome */,
 				23CACC292B00FEF1008AC1DD /* Login */,
 				236D14F72B08EC6C00665205 /* SignUp */,
 			);
