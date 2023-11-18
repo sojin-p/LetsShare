@@ -50,7 +50,7 @@ final class WelcomeViewController: BaseViewController {
         return view
     }()
     
-    let loginButton = {
+    let signUpButton = {
         let view = UIButton()
         var config = UIButton.Configuration.filled()
         config.title = "회원가입"
@@ -61,7 +61,7 @@ final class WelcomeViewController: BaseViewController {
         return view
     }()
     
-    let signUpButton = {
+    let loginButton = {
         let view = UIButton()
         var config = UIButton.Configuration.filled()
         config.title = "로그인"
@@ -119,12 +119,12 @@ final class WelcomeViewController: BaseViewController {
             make.horizontalEdges.bottom.equalToSuperview()
         }
         
-        loginButton.snp.makeConstraints { make in
+        signUpButton.snp.makeConstraints { make in
             make.top.horizontalEdges.equalToSuperview()
             make.height.equalTo(buttonContainerView).multipliedBy(0.45)
         }
         
-        signUpButton.snp.makeConstraints { make in
+        loginButton.snp.makeConstraints { make in
             make.height.equalTo(buttonContainerView).multipliedBy(0.45)
             make.horizontalEdges.bottom.equalToSuperview()
         }
