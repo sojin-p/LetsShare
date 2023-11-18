@@ -81,7 +81,7 @@ final class SignUpViewConroller: BaseViewController {
         
         emailDuplicationCheckButton.snp.makeConstraints { make in
             make.bottom.equalTo(emailTextField)
-            make.height.equalTo(30)
+            make.height.equalTo(35)
             make.width.equalTo(55)
             make.trailing.equalTo(nickNameTextField)
         }
