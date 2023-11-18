@@ -80,6 +80,8 @@ final class LoginViewController: BaseViewController {
     }()
     
     let disposeBag = DisposeBag()
+    
+    let viewModel = LoginViewModel()
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -90,37 +92,21 @@ final class LoginViewController: BaseViewController {
     
     func bind() {
         
-        let email = emailTextField.rx.text.orEmpty
-            .map { email -> Bool in
-                do {
-                    let result = try self.checkLoginValidation(text: email, valid: .invalidEmail)
-                    return true
-                } catch {
-                    if email.count > 1 {
-                        self.emailResultLabel.text = LoginValidationError.invalidEmail.errorMessage
-                    } else if email.count == 0 {
-                        self.emailResultLabel.isHidden = true
-                    }
-                    return false
-                }
-            }
+        let input = LoginViewModel.Input(
+            emailText: emailTextField.rx.text,
+            passwordText: passwordTextField.rx.text)
         
-        let password = passwordTextField.rx.text.orEmpty
-            .map { password in
-                do {
-                    let result = try self.checkLoginValidation(text: password, valid: .invalidPassword)
-                    return true
-                } catch {
-                    if password.count > 1 {
-                        self.passwordResultLabel.text = LoginValidationError.invalidPassword.errorMessage
-                    } else if password.count == 0 {
-                        self.passwordResultLabel.isHidden = true
-                    }
-                    return false
-                }
-            }
+        let output = viewModel.transform(input: input)
         
-        email
+        output.emailErrorMessage
+            .bind(to: emailResultLabel.rx.text)
+            .disposed(by: disposeBag)
+        
+        output.passwordErrorMessage
+            .bind(to: passwordResultLabel.rx.text)
+            .disposed(by: disposeBag)
+        
+        output.email
             .bind(with: self) { owner, bool in
                 let color = bool ? Color.Point.yellow : UIColor.systemGray4
                 owner.emailTextField.borderActiveColor = color
@@ -129,7 +115,7 @@ final class LoginViewController: BaseViewController {
             }
             .disposed(by: disposeBag)
         
-        password
+        output.password
             .bind(with: self) { owner, bool in
                 let color = bool ? Color.Point.yellow : UIColor.systemGray4
                 owner.passwordTextField.borderActiveColor = color
@@ -138,15 +124,11 @@ final class LoginViewController: BaseViewController {
             }
             .disposed(by: disposeBag)
         
-        let validation = Observable.combineLatest(email, password) { email, password in
-            return email && password
-        }
-        
-        validation
+        output.validation
             .bind(to: loginButton.rx.isEnabled)
             .disposed(by: disposeBag)
         
-        validation
+        output.validation
             .bind(with: self) { owner, bool in
                 let color = bool ? Color.Point.navy : UIColor.systemGray4
                 owner.loginButton.configuration?.baseBackgroundColor = color
