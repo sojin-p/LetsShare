@@ -33,6 +33,7 @@ final class LoginViewController: BaseViewController {
         let view = HoshiTextField(frame: .zero)
         view.placeholder = "EMAIL"
         view.placeholderColor = Color.Point.navy
+        view.keyboardType = .emailAddress
         return view
     }()
     
