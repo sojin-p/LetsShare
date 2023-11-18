@@ -47,6 +47,11 @@ final class SignUpViewConroller: BaseViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        DispatchQueue.main.async {
+            self.nickNameTextField.becomeFirstResponder()
+        }
+        
     }
     
     override func configure() {
