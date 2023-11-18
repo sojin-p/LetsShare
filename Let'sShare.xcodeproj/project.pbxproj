@@ -8,6 +8,10 @@
 
 /* Begin PBXBuildFile section */
 		236D14F92B08ECA400665205 /* SignUpViewConroller.swift in Sources */ = {isa = PBXBuildFile; fileRef = 236D14F82B08ECA400665205 /* SignUpViewConroller.swift */; };
+		236D14FC2B08F54500665205 /* PointColorHoshiTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 236D14FB2B08F54500665205 /* PointColorHoshiTextField.swift */; };
+		236D14FE2B090AE900665205 /* WhiteAndShadowContainerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 236D14FD2B090AE900665205 /* WhiteAndShadowContainerView.swift */; };
+		236D15002B090B2000665205 /* BaseView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 236D14FF2B090B2000665205 /* BaseView.swift */; };
+		236D15032B09188F00665205 /* WelcomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 236D15022B09188F00665205 /* WelcomeViewController.swift */; };
 		23CACC0D2B00E7B9008AC1DD /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23CACC0C2B00E7B9008AC1DD /* AppDelegate.swift */; };
 		23CACC0F2B00E7B9008AC1DD /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23CACC0E2B00E7B9008AC1DD /* SceneDelegate.swift */; };
 		23CACC112B00E7B9008AC1DD /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23CACC102B00E7B9008AC1DD /* LoginViewController.swift */; };
@@ -26,6 +30,10 @@
 
 /* Begin PBXFileReference section */
 		236D14F82B08ECA400665205 /* SignUpViewConroller.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpViewConroller.swift; sourceTree = "<group>"; };
+		236D14FB2B08F54500665205 /* PointColorHoshiTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PointColorHoshiTextField.swift; sourceTree = "<group>"; };
+		236D14FD2B090AE900665205 /* WhiteAndShadowContainerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WhiteAndShadowContainerView.swift; sourceTree = "<group>"; };
+		236D14FF2B090B2000665205 /* BaseView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseView.swift; sourceTree = "<group>"; };
+		236D15022B09188F00665205 /* WelcomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WelcomeViewController.swift; sourceTree = "<group>"; };
 		23CACC092B00E7B9008AC1DD /* Let'sShare.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Let'sShare.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		23CACC0C2B00E7B9008AC1DD /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		23CACC0E2B00E7B9008AC1DD /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -63,6 +71,23 @@
 			path = SignUp;
 			sourceTree = "<group>";
 		};
+		236D14FA2B08F4F700665205 /* CustomView */ = {
+			isa = PBXGroup;
+			children = (
+				236D14FB2B08F54500665205 /* PointColorHoshiTextField.swift */,
+				236D14FD2B090AE900665205 /* WhiteAndShadowContainerView.swift */,
+			);
+			path = CustomView;
+			sourceTree = "<group>";
+		};
+		236D15012B09185400665205 /* Welcome */ = {
+			isa = PBXGroup;
+			children = (
+				236D15022B09188F00665205 /* WelcomeViewController.swift */,
+			);
+			path = Welcome;
+			sourceTree = "<group>";
+		};
 		23CACC002B00E7B9008AC1DD = {
 			isa = PBXGroup;
 			children = (
@@ -83,6 +108,7 @@
 			isa = PBXGroup;
 			children = (
 				23CACC212B00FCA3008AC1DD /* Utility */,
+				236D14FA2B08F4F700665205 /* CustomView */,
 				23CACC202B00E969008AC1DD /* Scene */,
 				23CACC0C2B00E7B9008AC1DD /* AppDelegate.swift */,
 				23CACC0E2B00E7B9008AC1DD /* SceneDelegate.swift */,
@@ -96,6 +122,7 @@
 		23CACC202B00E969008AC1DD /* Scene */ = {
 			isa = PBXGroup;
 			children = (
+				236D15012B09185400665205 /* Welcome */,
 				23CACC262B00FE83008AC1DD /* Base */,
 				23CACC292B00FEF1008AC1DD /* Login */,
 				236D14F72B08EC6C00665205 /* SignUp */,
@@ -117,6 +144,7 @@
 			isa = PBXGroup;
 			children = (
 				23CACC272B00FEAD008AC1DD /* BaseViewController.swift */,
+				236D14FF2B090B2000665205 /* BaseView.swift */,
 			);
 			path = Base;
 			sourceTree = "<group>";
@@ -211,9 +239,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				236D14FC2B08F54500665205 /* PointColorHoshiTextField.swift in Sources */,
 				23CACC282B00FEAD008AC1DD /* BaseViewController.swift in Sources */,
 				23FD161A2B0898F600D16409 /* ValidationError+Enum.swift in Sources */,
+				236D15002B090B2000665205 /* BaseView.swift in Sources */,
+				236D14FE2B090AE900665205 /* WhiteAndShadowContainerView.swift in Sources */,
 				23CACC112B00E7B9008AC1DD /* LoginViewController.swift in Sources */,
+				236D15032B09188F00665205 /* WelcomeViewController.swift in Sources */,
 				23CACC252B00FCD6008AC1DD /* Color+Enum.swift in Sources */,
 				23FD161C2B08CE0500D16409 /* LoginViewModel.swift in Sources */,
 				236D14F92B08ECA400665205 /* SignUpViewConroller.swift in Sources */,
