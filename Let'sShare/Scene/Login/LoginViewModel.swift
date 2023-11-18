@@ -29,8 +29,6 @@ class LoginViewModel {
     
     func transform(input: Input) -> Output {
         
-        let sss = input.emailText.orEmpty
-        
         let email = checkValidation(input: input.emailText, valid: .invalidEmail, errorMessage: LoginValidationError.invalidEmail.errorMessage)
         
         let password = checkValidation(input: input.passwordText, valid: .invalidPassword, errorMessage: LoginValidationError.invalidPassword.errorMessage)

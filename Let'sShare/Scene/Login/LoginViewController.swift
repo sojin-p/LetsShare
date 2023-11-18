@@ -136,15 +136,6 @@ final class LoginViewController: BaseViewController {
             .disposed(by: disposeBag)
         
     }
-
-    func checkLoginValidation(text: String, valid: LoginValidationError) throws -> Bool {
-        let isValid = text.range(of: valid.regex, options: .regularExpression) != nil
-        if isValid {
-            return true
-        } else {
-            throw valid
-        }
-    }
     
     override func configure() {
         super.configure()
