@@ -74,6 +74,20 @@ final class WelcomeViewController: BaseViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        loginButton.addTarget(self, action: #selector(loginButtonClicked), for: .touchUpInside)
+        signUpButton.addTarget(self, action: #selector(signUpButtonClicked), for: .touchUpInside)
+        
+    }
+    
+    @objc func loginButtonClicked() {
+        let vc = LoginViewController()
+        navigationController?.pushViewController(vc, animated: true)
+    }
+    
+    @objc func signUpButtonClicked() {
+        let vc = SignUpViewConroller()
+        navigationController?.pushViewController(vc, animated: true)
     }
     
     override func configure() {
