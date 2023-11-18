@@ -17,7 +17,7 @@ enum LoginValidationError: Error {
         switch self {
         case .emptyString: return "내용을 입력해주세요."
         case .invalidEmail: return "이메일 형식(abc@de.fg)으로 입력해 주세요."
-        case .invalidPassword: return "대소문자, 숫자, 특수문자 포함한 6~30자"
+        case .invalidPassword: return "영문, 숫자, 특수문자 포함한 6~30자"
         case .invalidNickname: return "한글 or 영문 2~6자"
         }
     }
