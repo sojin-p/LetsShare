@@ -101,7 +101,7 @@ final class WelcomeViewController: BaseViewController {
         
         containerView.snp.makeConstraints { make in
             make.top.horizontalEdges.equalToSuperview()
-            make.height.equalToSuperview().multipliedBy(0.7)
+            make.height.equalToSuperview().multipliedBy(0.67)
         }
         
         appNameLabel.snp.makeConstraints { make in
