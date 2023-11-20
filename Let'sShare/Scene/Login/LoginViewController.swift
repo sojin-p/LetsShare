@@ -65,12 +65,13 @@ final class LoginViewController: BaseViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        DispatchQueue.main.async {
+        DispatchQueue.main.asyncAfter(deadline: .now() + 0.6) {
             self.emailTextField.becomeFirstResponder()
         }
         
         bind()
-        
+        viewUpAndDown(textField: emailTextField)
+        viewUpAndDown(textField: passwordTextField)
     }
     
     func bind() {
@@ -118,6 +119,24 @@ final class LoginViewController: BaseViewController {
             }
             .disposed(by: disposeBag)
         
+    }
+    
+    func viewUpAndDown(textField: UITextField) {
+        textField.rx.controlEvent(.editingDidBegin)
+            .bind(with: self) { owner, _ in
+                UIView.animate(withDuration: 0.3) {
+                    owner.view.transform = CGAffineTransform(translationX: 0, y: -45)
+                }
+            }
+            .disposed(by: disposeBag)
+        
+        textField.rx.controlEvent(.editingDidEnd)
+            .bind(with: self) { owner, _ in
+                UIView.animate(withDuration: 0.3) {
+                    owner.view.transform = .identity
+                }
+            }
+            .disposed(by: disposeBag)
     }
     
     override func configure() {
