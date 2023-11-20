@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		234A71A42B0B7E9A00B8E60B /* .gitignore in Resources */ = {isa = PBXBuildFile; fileRef = 234A71A32B0B7E9A00B8E60B /* .gitignore */; };
 		236D14F92B08ECA400665205 /* SignUpViewConroller.swift in Sources */ = {isa = PBXBuildFile; fileRef = 236D14F82B08ECA400665205 /* SignUpViewConroller.swift */; };
 		236D14FC2B08F54500665205 /* PointColorHoshiTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 236D14FB2B08F54500665205 /* PointColorHoshiTextField.swift */; };
 		236D14FE2B090AE900665205 /* WhiteAndShadowContainerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 236D14FD2B090AE900665205 /* WhiteAndShadowContainerView.swift */; };
@@ -29,6 +30,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		234A71A32B0B7E9A00B8E60B /* .gitignore */ = {isa = PBXFileReference; lastKnownFileType = text; path = .gitignore; sourceTree = "<group>"; };
 		236D14F82B08ECA400665205 /* SignUpViewConroller.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpViewConroller.swift; sourceTree = "<group>"; };
 		236D14FB2B08F54500665205 /* PointColorHoshiTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PointColorHoshiTextField.swift; sourceTree = "<group>"; };
 		236D14FD2B090AE900665205 /* WhiteAndShadowContainerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WhiteAndShadowContainerView.swift; sourceTree = "<group>"; };
@@ -115,6 +117,7 @@
 				23CACC152B00E7D7008AC1DD /* Assets.xcassets */,
 				23CACC172B00E7D7008AC1DD /* LaunchScreen.storyboard */,
 				23CACC1A2B00E7D7008AC1DD /* Info.plist */,
+				234A71A32B0B7E9A00B8E60B /* .gitignore */,
 			);
 			path = "Let'sShare";
 			sourceTree = "<group>";
@@ -228,6 +231,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				23CACC192B00E7D7008AC1DD /* LaunchScreen.storyboard in Resources */,
+				234A71A42B0B7E9A00B8E60B /* .gitignore in Resources */,
 				23CACC162B00E7D7008AC1DD /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
