@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		234A71A42B0B7E9A00B8E60B /* .gitignore in Resources */ = {isa = PBXBuildFile; fileRef = 234A71A32B0B7E9A00B8E60B /* .gitignore */; };
+		234A71A72B0B996E00B8E60B /* APIKey.swift in Sources */ = {isa = PBXBuildFile; fileRef = 234A71A62B0B996E00B8E60B /* APIKey.swift */; };
 		236D14F92B08ECA400665205 /* SignUpViewConroller.swift in Sources */ = {isa = PBXBuildFile; fileRef = 236D14F82B08ECA400665205 /* SignUpViewConroller.swift */; };
 		236D14FC2B08F54500665205 /* PointColorHoshiTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 236D14FB2B08F54500665205 /* PointColorHoshiTextField.swift */; };
 		236D14FE2B090AE900665205 /* WhiteAndShadowContainerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 236D14FD2B090AE900665205 /* WhiteAndShadowContainerView.swift */; };
@@ -31,6 +32,7 @@
 
 /* Begin PBXFileReference section */
 		234A71A32B0B7E9A00B8E60B /* .gitignore */ = {isa = PBXFileReference; lastKnownFileType = text; path = .gitignore; sourceTree = "<group>"; };
+		234A71A62B0B996E00B8E60B /* APIKey.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIKey.swift; sourceTree = "<group>"; };
 		236D14F82B08ECA400665205 /* SignUpViewConroller.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpViewConroller.swift; sourceTree = "<group>"; };
 		236D14FB2B08F54500665205 /* PointColorHoshiTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PointColorHoshiTextField.swift; sourceTree = "<group>"; };
 		236D14FD2B090AE900665205 /* WhiteAndShadowContainerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WhiteAndShadowContainerView.swift; sourceTree = "<group>"; };
@@ -65,6 +67,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		234A71A52B0B995400B8E60B /* Network */ = {
+			isa = PBXGroup;
+			children = (
+				234A71A62B0B996E00B8E60B /* APIKey.swift */,
+			);
+			path = Network;
+			sourceTree = "<group>";
+		};
 		236D14F72B08EC6C00665205 /* SignUp */ = {
 			isa = PBXGroup;
 			children = (
@@ -109,6 +119,7 @@
 		23CACC0B2B00E7B9008AC1DD /* Let'sShare */ = {
 			isa = PBXGroup;
 			children = (
+				234A71A52B0B995400B8E60B /* Network */,
 				23CACC212B00FCA3008AC1DD /* Utility */,
 				236D14FA2B08F4F700665205 /* CustomView */,
 				23CACC202B00E969008AC1DD /* Scene */,
@@ -251,6 +262,7 @@
 				23CACC112B00E7B9008AC1DD /* LoginViewController.swift in Sources */,
 				236D15032B09188F00665205 /* WelcomeViewController.swift in Sources */,
 				23CACC252B00FCD6008AC1DD /* Color+Enum.swift in Sources */,
+				234A71A72B0B996E00B8E60B /* APIKey.swift in Sources */,
 				23FD161C2B08CE0500D16409 /* LoginViewModel.swift in Sources */,
 				236D14F92B08ECA400665205 /* SignUpViewConroller.swift in Sources */,
 				23CACC0D2B00E7B9008AC1DD /* AppDelegate.swift in Sources */,
