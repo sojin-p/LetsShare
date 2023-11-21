@@ -9,7 +9,7 @@ import Foundation
 import RxSwift
 import RxCocoa
 
-class LoginViewModel {
+final class LoginViewModel {
     
     struct Input {
         let emailText: ControlProperty<String?>
@@ -24,8 +24,8 @@ class LoginViewModel {
         let validation: Observable<Bool>
     }
     
-    let emailErrorMessage = PublishRelay<String>()
-    let passwordErrorMessage = PublishRelay<String>()
+    private let emailErrorMessage = PublishRelay<String>()
+    private let passwordErrorMessage = PublishRelay<String>()
     
     func transform(input: Input) -> Output {
         
