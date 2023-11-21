@@ -7,6 +7,7 @@
 
 import UIKit
 import RxSwift
+import TextFieldEffects
 
 final class SignUpViewConroller: BaseViewController {
     
@@ -70,41 +71,10 @@ final class SignUpViewConroller: BaseViewController {
         
         let output = viewModel.transform(input: input)
         
-        output.nickname
-            .asDriver(onErrorJustReturn: false)
-            .drive(with: self) { owner, bool in
-                let color = bool ? Color.Point.yellow : UIColor.systemGray4
-                owner.nicknameTextField.borderActiveColor = color
-                owner.nicknameTextField.borderInactiveColor = color
-            }
-            .disposed(by: disposeBag)
-        
-        output.email
-            .asDriver(onErrorJustReturn: false)
-            .drive(with: self) { owner, bool in
-                let color = bool ? Color.Point.yellow : UIColor.systemGray4
-                owner.emailTextField.borderActiveColor = color
-                owner.emailTextField.borderInactiveColor = color
-            }
-            .disposed(by: disposeBag)
-        
-        output.password
-            .asDriver(onErrorJustReturn: false)
-            .drive(with: self) { owner, bool in
-                let color = bool ? Color.Point.yellow : UIColor.systemGray4
-                owner.passwordTextField.borderActiveColor = color
-                owner.passwordTextField.borderInactiveColor = color
-            }
-            .disposed(by: disposeBag)
-        
-        output.checkPassword
-            .asDriver(onErrorJustReturn: false)
-            .drive(with: self) { owner, bool in
-                let color = bool ? Color.Point.yellow : UIColor.systemGray4
-                owner.passwordCheckTextField.borderActiveColor = color
-                owner.passwordCheckTextField.borderInactiveColor = color
-            }
-            .disposed(by: disposeBag)
+        bindBorderColor(output.nickname, textField: nicknameTextField)
+        bindBorderColor(output.email, textField: emailTextField)
+        bindBorderColor(output.password, textField: passwordTextField)
+        bindBorderColor(output.checkPassword, textField: passwordCheckTextField)
         
         output.validation
             .bind(to: signUpButton.rx.isEnabled)
@@ -114,6 +84,17 @@ final class SignUpViewConroller: BaseViewController {
             .bind(with: self) { owner, bool in
                 let color = bool ? Color.Point.navy : UIColor.systemGray4
                 owner.signUpButton.backgroundColor = color
+            }
+            .disposed(by: disposeBag)
+    }
+    
+    func bindBorderColor(_ outputBool: Observable<Bool>, textField: HoshiTextField) {
+        outputBool
+            .asDriver(onErrorJustReturn: false)
+            .drive(with: self) { owner, bool in
+                let color = bool ? Color.Point.yellow : UIColor.systemGray4
+                textField.borderActiveColor = color
+                textField.borderInactiveColor = color
             }
             .disposed(by: disposeBag)
     }
