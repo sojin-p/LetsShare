@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import RxSwift
 
 final class SignUpViewConroller: BaseViewController {
     
@@ -45,6 +46,9 @@ final class SignUpViewConroller: BaseViewController {
         return view
     }()
     
+    let viewModel = SignUpViewModel()
+    let disposeBag = DisposeBag()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -52,6 +56,66 @@ final class SignUpViewConroller: BaseViewController {
             self.nicknameTextField.becomeFirstResponder()
         }
         
+        bind()
+        
+    }
+    
+    func bind() {
+        
+        let input = SignUpViewModel.Input(
+            nicknameText: nicknameTextField.rx.text,
+            emailText: emailTextField.rx.text,
+            passwordText: passwordTextField.rx.text, 
+            passwordCheckText: passwordCheckTextField.rx.text)
+        
+        let output = viewModel.transform(input: input)
+        
+        output.nickname
+            .asDriver(onErrorJustReturn: false)
+            .drive(with: self) { owner, bool in
+                let color = bool ? Color.Point.yellow : UIColor.systemGray4
+                owner.nicknameTextField.borderActiveColor = color
+                owner.nicknameTextField.borderInactiveColor = color
+            }
+            .disposed(by: disposeBag)
+        
+        output.email
+            .asDriver(onErrorJustReturn: false)
+            .drive(with: self) { owner, bool in
+                let color = bool ? Color.Point.yellow : UIColor.systemGray4
+                owner.emailTextField.borderActiveColor = color
+                owner.emailTextField.borderInactiveColor = color
+            }
+            .disposed(by: disposeBag)
+        
+        output.password
+            .asDriver(onErrorJustReturn: false)
+            .drive(with: self) { owner, bool in
+                let color = bool ? Color.Point.yellow : UIColor.systemGray4
+                owner.passwordTextField.borderActiveColor = color
+                owner.passwordTextField.borderInactiveColor = color
+            }
+            .disposed(by: disposeBag)
+        
+        output.checkPassword
+            .asDriver(onErrorJustReturn: false)
+            .drive(with: self) { owner, bool in
+                let color = bool ? Color.Point.yellow : UIColor.systemGray4
+                owner.passwordCheckTextField.borderActiveColor = color
+                owner.passwordCheckTextField.borderInactiveColor = color
+            }
+            .disposed(by: disposeBag)
+        
+        output.validation
+            .bind(to: signUpButton.rx.isEnabled)
+            .disposed(by: disposeBag)
+        
+        output.validation
+            .bind(with: self) { owner, bool in
+                let color = bool ? Color.Point.navy : UIColor.systemGray4
+                owner.signUpButton.backgroundColor = color
+            }
+            .disposed(by: disposeBag)
     }
     
     override func configure() {
