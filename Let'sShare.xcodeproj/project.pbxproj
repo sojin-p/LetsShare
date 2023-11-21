@@ -13,6 +13,7 @@
 		234A71AC2B0BA3F400B8E60B /* SignUpViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 234A71AB2B0BA3F400B8E60B /* SignUpViewModel.swift */; };
 		234A71C12B0C7C4F00B8E60B /* Moya in Frameworks */ = {isa = PBXBuildFile; productRef = 234A71C02B0C7C4F00B8E60B /* Moya */; };
 		234A71C32B0C7C4F00B8E60B /* RxMoya in Frameworks */ = {isa = PBXBuildFile; productRef = 234A71C22B0C7C4F00B8E60B /* RxMoya */; };
+		234A71C72B0CCFDA00B8E60B /* ViewModelType+Protocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 234A71C62B0CCFD900B8E60B /* ViewModelType+Protocol.swift */; };
 		236D14F92B08ECA400665205 /* SignUpViewConroller.swift in Sources */ = {isa = PBXBuildFile; fileRef = 236D14F82B08ECA400665205 /* SignUpViewConroller.swift */; };
 		236D14FC2B08F54500665205 /* PointColorHoshiTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 236D14FB2B08F54500665205 /* PointColorHoshiTextField.swift */; };
 		236D14FE2B090AE900665205 /* WhiteAndShadowContainerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 236D14FD2B090AE900665205 /* WhiteAndShadowContainerView.swift */; };
@@ -39,6 +40,7 @@
 		234A71A62B0B996E00B8E60B /* APIKey.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIKey.swift; sourceTree = "<group>"; };
 		234A71A82B0B9B8500B8E60B /* APIManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIManager.swift; sourceTree = "<group>"; };
 		234A71AB2B0BA3F400B8E60B /* SignUpViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpViewModel.swift; sourceTree = "<group>"; };
+		234A71C62B0CCFD900B8E60B /* ViewModelType+Protocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ViewModelType+Protocol.swift"; sourceTree = "<group>"; };
 		236D14F82B08ECA400665205 /* SignUpViewConroller.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpViewConroller.swift; sourceTree = "<group>"; };
 		236D14FB2B08F54500665205 /* PointColorHoshiTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PointColorHoshiTextField.swift; sourceTree = "<group>"; };
 		236D14FD2B090AE900665205 /* WhiteAndShadowContainerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WhiteAndShadowContainerView.swift; sourceTree = "<group>"; };
@@ -160,6 +162,7 @@
 				23CACC242B00FCD6008AC1DD /* Color+Enum.swift */,
 				23CACC352B01059B008AC1DD /* Image+Enum.swift */,
 				23FD16192B0898F600D16409 /* ValidationError+Enum.swift */,
+				234A71C62B0CCFD900B8E60B /* ViewModelType+Protocol.swift */,
 			);
 			path = Utility;
 			sourceTree = "<group>";
@@ -283,6 +286,7 @@
 				23CACC0D2B00E7B9008AC1DD /* AppDelegate.swift in Sources */,
 				23CACC362B01059B008AC1DD /* Image+Enum.swift in Sources */,
 				23CACC0F2B00E7B9008AC1DD /* SceneDelegate.swift in Sources */,
+				234A71C72B0CCFDA00B8E60B /* ViewModelType+Protocol.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
