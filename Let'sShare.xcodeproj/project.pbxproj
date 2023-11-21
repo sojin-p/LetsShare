@@ -10,6 +10,9 @@
 		234A71A42B0B7E9A00B8E60B /* .gitignore in Resources */ = {isa = PBXBuildFile; fileRef = 234A71A32B0B7E9A00B8E60B /* .gitignore */; };
 		234A71A72B0B996E00B8E60B /* APIKey.swift in Sources */ = {isa = PBXBuildFile; fileRef = 234A71A62B0B996E00B8E60B /* APIKey.swift */; };
 		234A71A92B0B9B8500B8E60B /* APIManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 234A71A82B0B9B8500B8E60B /* APIManager.swift */; };
+		234A71AC2B0BA3F400B8E60B /* SignUpViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 234A71AB2B0BA3F400B8E60B /* SignUpViewModel.swift */; };
+		234A71C12B0C7C4F00B8E60B /* Moya in Frameworks */ = {isa = PBXBuildFile; productRef = 234A71C02B0C7C4F00B8E60B /* Moya */; };
+		234A71C32B0C7C4F00B8E60B /* RxMoya in Frameworks */ = {isa = PBXBuildFile; productRef = 234A71C22B0C7C4F00B8E60B /* RxMoya */; };
 		236D14F92B08ECA400665205 /* SignUpViewConroller.swift in Sources */ = {isa = PBXBuildFile; fileRef = 236D14F82B08ECA400665205 /* SignUpViewConroller.swift */; };
 		236D14FC2B08F54500665205 /* PointColorHoshiTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 236D14FB2B08F54500665205 /* PointColorHoshiTextField.swift */; };
 		236D14FE2B090AE900665205 /* WhiteAndShadowContainerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 236D14FD2B090AE900665205 /* WhiteAndShadowContainerView.swift */; };
@@ -35,6 +38,7 @@
 		234A71A32B0B7E9A00B8E60B /* .gitignore */ = {isa = PBXFileReference; lastKnownFileType = text; path = .gitignore; sourceTree = "<group>"; };
 		234A71A62B0B996E00B8E60B /* APIKey.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIKey.swift; sourceTree = "<group>"; };
 		234A71A82B0B9B8500B8E60B /* APIManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIManager.swift; sourceTree = "<group>"; };
+		234A71AB2B0BA3F400B8E60B /* SignUpViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpViewModel.swift; sourceTree = "<group>"; };
 		236D14F82B08ECA400665205 /* SignUpViewConroller.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpViewConroller.swift; sourceTree = "<group>"; };
 		236D14FB2B08F54500665205 /* PointColorHoshiTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PointColorHoshiTextField.swift; sourceTree = "<group>"; };
 		236D14FD2B090AE900665205 /* WhiteAndShadowContainerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WhiteAndShadowContainerView.swift; sourceTree = "<group>"; };
@@ -59,9 +63,11 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				234A71C32B0C7C4F00B8E60B /* RxMoya in Frameworks */,
 				23CACC322B010376008AC1DD /* RxCocoa in Frameworks */,
 				23CACC2C2B010327008AC1DD /* SnapKit in Frameworks */,
 				23CACC342B010376008AC1DD /* RxSwift in Frameworks */,
+				234A71C12B0C7C4F00B8E60B /* Moya in Frameworks */,
 				23CACC2F2B010350008AC1DD /* TextFieldEffects in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -82,6 +88,7 @@
 			isa = PBXGroup;
 			children = (
 				236D14F82B08ECA400665205 /* SignUpViewConroller.swift */,
+				234A71AB2B0BA3F400B8E60B /* SignUpViewModel.swift */,
 			);
 			path = SignUp;
 			sourceTree = "<group>";
@@ -196,6 +203,8 @@
 				23CACC2E2B010350008AC1DD /* TextFieldEffects */,
 				23CACC312B010376008AC1DD /* RxCocoa */,
 				23CACC332B010376008AC1DD /* RxSwift */,
+				234A71C02B0C7C4F00B8E60B /* Moya */,
+				234A71C22B0C7C4F00B8E60B /* RxMoya */,
 			);
 			productName = "Let'sShare";
 			productReference = 23CACC092B00E7B9008AC1DD /* Let'sShare.app */;
@@ -229,6 +238,7 @@
 				23CACC2A2B010327008AC1DD /* XCRemoteSwiftPackageReference "SnapKit" */,
 				23CACC2D2B01034F008AC1DD /* XCRemoteSwiftPackageReference "TextFieldEffects" */,
 				23CACC302B010375008AC1DD /* XCRemoteSwiftPackageReference "RxSwift" */,
+				234A71BF2B0C7C4F00B8E60B /* XCRemoteSwiftPackageReference "Moya" */,
 			);
 			productRefGroup = 23CACC0A2B00E7B9008AC1DD /* Products */;
 			projectDirPath = "";
@@ -259,6 +269,7 @@
 			files = (
 				236D14FC2B08F54500665205 /* PointColorHoshiTextField.swift in Sources */,
 				23CACC282B00FEAD008AC1DD /* BaseViewController.swift in Sources */,
+				234A71AC2B0BA3F400B8E60B /* SignUpViewModel.swift in Sources */,
 				23FD161A2B0898F600D16409 /* ValidationError+Enum.swift in Sources */,
 				236D15002B090B2000665205 /* BaseView.swift in Sources */,
 				236D14FE2B090AE900665205 /* WhiteAndShadowContainerView.swift in Sources */,
@@ -494,6 +505,14 @@
 /* End XCConfigurationList section */
 
 /* Begin XCRemoteSwiftPackageReference section */
+		234A71BF2B0C7C4F00B8E60B /* XCRemoteSwiftPackageReference "Moya" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/Moya/Moya.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 15.0.3;
+			};
+		};
 		23CACC2A2B010327008AC1DD /* XCRemoteSwiftPackageReference "SnapKit" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/SnapKit/SnapKit.git";
@@ -521,6 +540,16 @@
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
+		234A71C02B0C7C4F00B8E60B /* Moya */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 234A71BF2B0C7C4F00B8E60B /* XCRemoteSwiftPackageReference "Moya" */;
+			productName = Moya;
+		};
+		234A71C22B0C7C4F00B8E60B /* RxMoya */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 234A71BF2B0C7C4F00B8E60B /* XCRemoteSwiftPackageReference "Moya" */;
+			productName = RxMoya;
+		};
 		23CACC2B2B010327008AC1DD /* SnapKit */ = {
 			isa = XCSwiftPackageProductDependency;
 			package = 23CACC2A2B010327008AC1DD /* XCRemoteSwiftPackageReference "SnapKit" */;
