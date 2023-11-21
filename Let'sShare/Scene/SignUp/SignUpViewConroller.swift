@@ -11,7 +11,7 @@ final class SignUpViewConroller: BaseViewController {
     
     let requiredContainerView = WhiteAndShadowContainerView()
     
-    let nickNameTextField = PointColorHoshiTextField(placeholder: "NICKNAME", keyboardType: .default, isSecure: false)
+    let nicknameTextField = PointColorHoshiTextField(placeholder: "NICKNAME", keyboardType: .default, isSecure: false)
     
     let emailTextField = PointColorHoshiTextField(placeholder: "EMAIL", keyboardType: .emailAddress, isSecure: false)
     
@@ -49,7 +49,7 @@ final class SignUpViewConroller: BaseViewController {
         super.viewDidLoad()
         
         DispatchQueue.main.async {
-            self.nickNameTextField.becomeFirstResponder()
+            self.nicknameTextField.becomeFirstResponder()
         }
         
     }
@@ -59,7 +59,7 @@ final class SignUpViewConroller: BaseViewController {
         
         [requiredContainerView, signUpButton, bottomView].forEach { view.addSubview($0) }
         
-        [nickNameTextField, emailTextField, emailDuplicationCheckButton, passwordTextField, passwordCheckTextField].forEach { requiredContainerView.addSubview($0) }
+        [nicknameTextField, emailTextField, emailDuplicationCheckButton, passwordTextField, passwordCheckTextField].forEach { requiredContainerView.addSubview($0) }
         
     }
     
@@ -72,15 +72,15 @@ final class SignUpViewConroller: BaseViewController {
             make.height.equalToSuperview().multipliedBy(0.41)
         }
         
-        nickNameTextField.snp.makeConstraints { make in
+        nicknameTextField.snp.makeConstraints { make in
             make.top.equalToSuperview().offset(20)
             make.horizontalEdges.equalToSuperview().inset(30)
             make.height.equalTo(60)
         }
         
         emailTextField.snp.makeConstraints { make in
-            make.top.equalTo(nickNameTextField.snp.bottom).offset(16)
-            make.leading.height.equalTo(nickNameTextField)
+            make.top.equalTo(nicknameTextField.snp.bottom).offset(16)
+            make.leading.height.equalTo(nicknameTextField)
             make.trailing.equalTo(emailDuplicationCheckButton.snp.leading).offset(-8)
         }
         
@@ -88,17 +88,17 @@ final class SignUpViewConroller: BaseViewController {
             make.bottom.equalTo(emailTextField)
             make.height.equalTo(35)
             make.width.equalTo(55)
-            make.trailing.equalTo(nickNameTextField)
+            make.trailing.equalTo(nicknameTextField)
         }
         
         passwordTextField.snp.makeConstraints { make in
             make.top.equalTo(emailTextField.snp.bottom).offset(16)
-            make.horizontalEdges.height.equalTo(nickNameTextField)
+            make.horizontalEdges.height.equalTo(nicknameTextField)
         }
         
         passwordCheckTextField.snp.makeConstraints { make in
             make.top.equalTo(passwordTextField.snp.bottom).offset(16)
-            make.horizontalEdges.height.equalTo(nickNameTextField)
+            make.horizontalEdges.height.equalTo(nicknameTextField)
         }
         
         signUpButton.snp.makeConstraints { make in
