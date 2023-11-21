@@ -83,11 +83,13 @@ final class LoginViewController: BaseViewController {
         let output = viewModel.transform(input: input)
         
         output.emailErrorMessage
-            .bind(to: emailResultLabel.rx.text)
+            .asDriver(onErrorJustReturn: "")
+            .drive(emailResultLabel.rx.text)
             .disposed(by: disposeBag)
         
         output.passwordErrorMessage
-            .bind(to: passwordResultLabel.rx.text)
+            .asDriver(onErrorJustReturn: "")
+            .drive(passwordResultLabel.rx.text)
             .disposed(by: disposeBag)
         
         output.email
