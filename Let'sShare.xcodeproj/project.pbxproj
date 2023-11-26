@@ -14,6 +14,10 @@
 		234A71C12B0C7C4F00B8E60B /* Moya in Frameworks */ = {isa = PBXBuildFile; productRef = 234A71C02B0C7C4F00B8E60B /* Moya */; };
 		234A71C32B0C7C4F00B8E60B /* RxMoya in Frameworks */ = {isa = PBXBuildFile; productRef = 234A71C22B0C7C4F00B8E60B /* RxMoya */; };
 		234A71C72B0CCFDA00B8E60B /* ViewModelType+Protocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 234A71C62B0CCFD900B8E60B /* ViewModelType+Protocol.swift */; };
+		234A71C92B0CD26100B8E60B /* API+Enum.swift in Sources */ = {isa = PBXBuildFile; fileRef = 234A71C82B0CD26100B8E60B /* API+Enum.swift */; };
+		234A71CB2B0CD2CE00B8E60B /* APIModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 234A71CA2B0CD2CE00B8E60B /* APIModel.swift */; };
+		234A71CE2B0CE7E400B8E60B /* NetworkError+Enum.swift in Sources */ = {isa = PBXBuildFile; fileRef = 234A71CD2B0CE7E400B8E60B /* NetworkError+Enum.swift */; };
+		2359010C2B12C2AD002C1ABB /* FeedViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2359010B2B12C2AC002C1ABB /* FeedViewController.swift */; };
 		236D14F92B08ECA400665205 /* SignUpViewConroller.swift in Sources */ = {isa = PBXBuildFile; fileRef = 236D14F82B08ECA400665205 /* SignUpViewConroller.swift */; };
 		236D14FC2B08F54500665205 /* PointColorHoshiTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 236D14FB2B08F54500665205 /* PointColorHoshiTextField.swift */; };
 		236D14FE2B090AE900665205 /* WhiteAndShadowContainerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 236D14FD2B090AE900665205 /* WhiteAndShadowContainerView.swift */; };
@@ -41,6 +45,10 @@
 		234A71A82B0B9B8500B8E60B /* APIManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIManager.swift; sourceTree = "<group>"; };
 		234A71AB2B0BA3F400B8E60B /* SignUpViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpViewModel.swift; sourceTree = "<group>"; };
 		234A71C62B0CCFD900B8E60B /* ViewModelType+Protocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ViewModelType+Protocol.swift"; sourceTree = "<group>"; };
+		234A71C82B0CD26100B8E60B /* API+Enum.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "API+Enum.swift"; sourceTree = "<group>"; };
+		234A71CA2B0CD2CE00B8E60B /* APIModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIModel.swift; sourceTree = "<group>"; };
+		234A71CD2B0CE7E400B8E60B /* NetworkError+Enum.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "NetworkError+Enum.swift"; sourceTree = "<group>"; };
+		2359010B2B12C2AC002C1ABB /* FeedViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedViewController.swift; sourceTree = "<group>"; };
 		236D14F82B08ECA400665205 /* SignUpViewConroller.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpViewConroller.swift; sourceTree = "<group>"; };
 		236D14FB2B08F54500665205 /* PointColorHoshiTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PointColorHoshiTextField.swift; sourceTree = "<group>"; };
 		236D14FD2B090AE900665205 /* WhiteAndShadowContainerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WhiteAndShadowContainerView.swift; sourceTree = "<group>"; };
@@ -80,10 +88,37 @@
 		234A71A52B0B995400B8E60B /* Network */ = {
 			isa = PBXGroup;
 			children = (
+				235901032B11FF72002C1ABB /* Model */,
+				234A71CC2B0CE7D100B8E60B /* Error */,
 				234A71A62B0B996E00B8E60B /* APIKey.swift */,
 				234A71A82B0B9B8500B8E60B /* APIManager.swift */,
+				234A71C82B0CD26100B8E60B /* API+Enum.swift */,
 			);
 			path = Network;
+			sourceTree = "<group>";
+		};
+		234A71CC2B0CE7D100B8E60B /* Error */ = {
+			isa = PBXGroup;
+			children = (
+				234A71CD2B0CE7E400B8E60B /* NetworkError+Enum.swift */,
+			);
+			path = Error;
+			sourceTree = "<group>";
+		};
+		235901032B11FF72002C1ABB /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				234A71CA2B0CD2CE00B8E60B /* APIModel.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		2359010A2B12C240002C1ABB /* Feed */ = {
+			isa = PBXGroup;
+			children = (
+				2359010B2B12C2AC002C1ABB /* FeedViewController.swift */,
+			);
+			path = Feed;
 			sourceTree = "<group>";
 		};
 		236D14F72B08EC6C00665205 /* SignUp */ = {
@@ -152,6 +187,7 @@
 				236D15012B09185400665205 /* Welcome */,
 				23CACC292B00FEF1008AC1DD /* Login */,
 				236D14F72B08EC6C00665205 /* SignUp */,
+				2359010A2B12C240002C1ABB /* Feed */,
 			);
 			path = Scene;
 			sourceTree = "<group>";
@@ -270,6 +306,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				2359010C2B12C2AD002C1ABB /* FeedViewController.swift in Sources */,
 				236D14FC2B08F54500665205 /* PointColorHoshiTextField.swift in Sources */,
 				23CACC282B00FEAD008AC1DD /* BaseViewController.swift in Sources */,
 				234A71AC2B0BA3F400B8E60B /* SignUpViewModel.swift in Sources */,
@@ -284,9 +321,12 @@
 				23FD161C2B08CE0500D16409 /* LoginViewModel.swift in Sources */,
 				236D14F92B08ECA400665205 /* SignUpViewConroller.swift in Sources */,
 				23CACC0D2B00E7B9008AC1DD /* AppDelegate.swift in Sources */,
+				234A71CE2B0CE7E400B8E60B /* NetworkError+Enum.swift in Sources */,
 				23CACC362B01059B008AC1DD /* Image+Enum.swift in Sources */,
 				23CACC0F2B00E7B9008AC1DD /* SceneDelegate.swift in Sources */,
 				234A71C72B0CCFDA00B8E60B /* ViewModelType+Protocol.swift in Sources */,
+				234A71CB2B0CD2CE00B8E60B /* APIModel.swift in Sources */,
+				234A71C92B0CD26100B8E60B /* API+Enum.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
