@@ -16,6 +16,7 @@ final class SignUpViewModel: ViewModelType {
         let emailText: ControlProperty<String?>
         let passwordText: ControlProperty<String?>
         let passwordCheckText: ControlProperty<String?>
+        let emailCheckTapped: ControlEvent<Void>
     }
     
     struct Output {
@@ -34,8 +35,11 @@ final class SignUpViewModel: ViewModelType {
     private let nicknameErrorMessage = PublishRelay<String>()
     private let emailErrorMessage = PublishRelay<String>()
     private let passwordErrorMessage = PublishRelay<String>()
+    private let disposeBag = DisposeBag()
     
     func transform(input: Input) -> Output {
+        
+        let isAvailable = BehaviorSubject(value: false)
         
         let nickname = loginVM.checkValidation(input: input.nicknameText, valid: .invalidNickname, errorMessage: LoginValidationError.invalidNickname.errorMessage, label: nicknameErrorMessage)
         
@@ -50,8 +54,29 @@ final class SignUpViewModel: ViewModelType {
             return password == checkPassword
         }
         
-        let validation = Observable.combineLatest(nickname, email, password, checkPassword) { nickname, email, password, checkPassword in
-            return nickname && email && password && checkPassword
+        input.emailCheckTapped
+            .throttle(.seconds(1), scheduler: MainScheduler.instance)
+            .withLatestFrom(input.emailText.orEmpty)
+            .debug()
+            .subscribe(with: self) { owner, email in
+                let data = ValidationEmail(email: email)
+                APIManager.shared.callRequest(type: ValidationEmailResponse.self, api: .validationEmail(data: data)) { response in
+                    switch response {
+                    case .success(let success):
+                        print("==== 메세지: ", success.message)
+                        //토스트 띄우기
+                        isAvailable.onNext(true)
+                    case .failure(let failure):
+                        
+                        isAvailable.onNext(false)
+                        print("=== 에러: ", failure.errorDescription)
+                    }
+                }
+            }
+            .disposed(by: disposeBag)
+        
+        let validation = Observable.combineLatest(nickname, password, checkPassword, isAvailable) { nickname, password, checkPassword, isAvailable in
+            return nickname && password && checkPassword && isAvailable
         }
         
         return Output(
@@ -60,7 +85,7 @@ final class SignUpViewModel: ViewModelType {
             passwordErrorMessage: passwordErrorMessage,
             nickname: nickname,
             email: email,
-            password: password, 
+            password: password,
             checkPassword: checkPassword,
             validation: validation)
     }
