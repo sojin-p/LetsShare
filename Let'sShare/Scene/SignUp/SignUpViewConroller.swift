@@ -58,6 +58,7 @@ final class SignUpViewConroller: BaseViewController {
         }
         
         bind()
+        signUpButton.addTarget(self, action: #selector(signUpButtonClicked), for: .touchUpInside)
         
     }
     
@@ -67,7 +68,8 @@ final class SignUpViewConroller: BaseViewController {
             nicknameText: nicknameTextField.rx.text,
             emailText: emailTextField.rx.text,
             passwordText: passwordTextField.rx.text, 
-            passwordCheckText: passwordCheckTextField.rx.text)
+            passwordCheckText: passwordCheckTextField.rx.text, 
+            emailCheckTapped: emailDuplicationCheckButton.rx.tap)
         
         let output = viewModel.transform(input: input)
         
@@ -75,6 +77,10 @@ final class SignUpViewConroller: BaseViewController {
         bindBorderColor(output.email, textField: emailTextField)
         bindBorderColor(output.password, textField: passwordTextField)
         bindBorderColor(output.checkPassword, textField: passwordCheckTextField)
+        
+        output.email
+            .bind(to: emailDuplicationCheckButton.rx.isEnabled)
+            .disposed(by: disposeBag)
         
         output.validation
             .bind(to: signUpButton.rx.isEnabled)
@@ -86,6 +92,21 @@ final class SignUpViewConroller: BaseViewController {
                 owner.signUpButton.backgroundColor = color
             }
             .disposed(by: disposeBag)
+        
+    }
+    
+    @objc func signUpButtonClicked() {
+        let data = Join(email: emailTextField.text ?? "", password: passwordTextField.text ?? "", nick: nicknameTextField.text ?? "")
+        APIManager.shared.callRequest(type: JoinResponse.self, api: .join(data: data)) { response in
+            switch response {
+            case .success(let success):
+                print("==== 메세지: ", success)
+                //얼릿 : 가입이 완료되었습니다. 로그인 하시겠습니까? -> 로그인화면
+            case .failure(let failure):
+                print("=== 에러: ", failure.errorDescription)
+                //얼럿 : 이미 가입된, 다시~
+            }
+        }
     }
     
     func bindBorderColor(_ outputBool: Observable<Bool>, textField: HoshiTextField) {
