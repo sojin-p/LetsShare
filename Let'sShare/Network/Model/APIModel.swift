@@ -25,10 +25,16 @@ struct ValidationEmail: Encodable {
 
 //MARK: - 받는 데이터
 struct JoinResponse: Decodable {
+    let _id: String
     let email: String
     let nick: String
 }
 
 struct ValidationEmailResponse: Decodable {
     let message: String
+}
+
+struct LoginResponse: Decodable {
+    let token: String
+    let refreshToken: String
 }
