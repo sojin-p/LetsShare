@@ -72,6 +72,23 @@ final class LoginViewController: BaseViewController {
         bind()
         viewUpAndDown(textField: emailTextField)
         viewUpAndDown(textField: passwordTextField)
+        
+        loginButton.addTarget(self, action: #selector(loginButtonClicked), for: .touchUpInside)
+    }
+    
+    @objc func loginButtonClicked() {
+        print("=====loginButtonClicked")
+        let data = Login(email: emailTextField.text ?? "", password: passwordTextField.text ?? "")
+        APIManager.shared.callRequest(type: LoginResponse.self, api: .login(data: data)) { response in
+            switch response {
+            case .success(let success):
+                print("==== 메세지: ", success)
+                //화면 전환
+            case .failure(let failure):
+                print("=== 에러: ", failure.errorDescription)
+                //얼럿
+            }
+        }
     }
     
     func bind() {
