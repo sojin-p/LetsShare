@@ -97,14 +97,18 @@ final class SignUpViewConroller: BaseViewController {
     
     @objc func signUpButtonClicked() {
         let data = Join(email: emailTextField.text ?? "", password: passwordTextField.text ?? "", nick: nicknameTextField.text ?? "")
-        APIManager.shared.callRequest(type: JoinResponse.self, api: .join(data: data)) { response in
+        APIManager.shared.callRequest(type: JoinResponse.self, api: .join(data: data), errorType: UserError.self) { response in
             switch response {
             case .success(let success):
                 print("==== 메세지: ", success)
-                //얼릿 : 가입이 완료되었습니다. 로그인 하시겠습니까? -> 로그인화면
+                //화면 전환
             case .failure(let failure):
-                print("=== 에러: ", failure.errorDescription)
-                //얼럿 : 이미 가입된, 다시~
+                if let common = failure as? CommonError {
+                    print("=== 에러: ", common.errorDescription)
+                } else if let error = failure as? UserError {
+                    print("=== 에러: ", error.errorDescription)
+                }
+                //얼럿
             }
         }
     }
