@@ -60,16 +60,18 @@ final class SignUpViewModel: ViewModelType {
             .debug()
             .subscribe(with: self) { owner, email in
                 let data = ValidationEmail(email: email)
-                APIManager.shared.callRequest(type: ValidationEmailResponse.self, api: .validationEmail(data: data)) { response in
+                APIManager.shared.callRequest(type: ValidationEmailResponse.self, api: .validationEmail(data: data), errorType: UserError.self) { response in
                     switch response {
                     case .success(let success):
-                        print("==== 메세지: ", success.message)
-                        //토스트 띄우기
-                        isAvailable.onNext(true)
+                        print("==== 메세지: ", success)
+                        //화면 전환
                     case .failure(let failure):
-                        
-                        isAvailable.onNext(false)
-                        print("=== 에러: ", failure.errorDescription)
+                        if let common = failure as? CommonError {
+                            print("=== 에러: ", common.errorDescription)
+                        } else if let error = failure as? UserError {
+                            print("=== 에러: ", error.errorDescription)
+                        }
+                        //얼럿
                     }
                 }
             }
