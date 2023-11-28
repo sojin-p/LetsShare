@@ -16,7 +16,7 @@ final class APIManager {
     
     let provider = MoyaProvider<UserAPI>()
     
-    func callRequest<T: Decodable>(type: T.Type, api: UserAPI, completion: @escaping (Result<T, NetworkError>) -> Void ) {
+    func callRequest<T: Decodable, U: RawRepresentable<Int>>(type: T.Type, api: UserAPI, errorType: U.Type, completion: @escaping (Result<T, Error>) -> Void ) {
         
         provider.request(api) { result in
             switch result {
@@ -28,22 +28,16 @@ final class APIManager {
                     
                 } catch {
                     
-                    switch value.statusCode {
-                    case 201...419:
-                        if let error = UserError(rawValue: value.statusCode) {
-                            let error = NetworkError.user(error)
-                            completion(.failure(error))
-                        }
-                    case 420...444, 446...500:
-                        if let commonError = CommonError(rawValue: value.statusCode) {
-                            let error = NetworkError.common(commonError)
-                            completion(.failure(error))
-                        }
-                    case 445:
-                        print("권한에러")
-                    default:
-                        print("===구조체 담기 실패ㅠㅠ")
+                    let statusCode = value.statusCode
+                    
+                    if let common = CommonError(rawValue: statusCode) {
+                        completion(.failure(common))
+                    } else if let error = errorType.init(rawValue: statusCode) as? Error {
+                        completion(.failure(error))
+                    } else {
+                        print("===구조체 담기 실패")
                     }
+                
                 }
             case .failure(let error): 
                 print("===서버통신 error===", error)
