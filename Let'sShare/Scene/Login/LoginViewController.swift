@@ -79,13 +79,20 @@ final class LoginViewController: BaseViewController {
     @objc func loginButtonClicked() {
         print("=====loginButtonClicked")
         let data = Login(email: emailTextField.text ?? "", password: passwordTextField.text ?? "")
-        APIManager.shared.callRequest(type: LoginResponse.self, api: .login(data: data)) { response in
+        
+        APIManager.shared.callRequest(type: LoginResponse.self, api: .login(data: data), errorType: UserError.self) { response in
             switch response {
             case .success(let success):
                 print("==== 메세지: ", success)
+                UserDefaultsManager.access.myValue = success.token
+                UserDefaultsManager.refresh.myValue = success.refreshToken
                 //화면 전환
             case .failure(let failure):
-                print("=== 에러: ", failure.errorDescription)
+                if let common = failure as? CommonError {
+                    print("=== 에러: ", common.errorDescription)
+                } else if let error = failure as? UserError {
+                    print("=== 에러: ", error.errorDescription)
+                }
                 //얼럿
             }
         }
