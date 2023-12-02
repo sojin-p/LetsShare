@@ -20,8 +20,6 @@ final class APIManager {
         
         provider.request(api) { result in
             
-            print("==APIManager==", result)
-            
             switch result {
                 
             case .success(let value):
@@ -45,7 +43,16 @@ final class APIManager {
                 
                 }
             case .failure(let error): 
-                print("===서버통신 error===", error)
+                
+                guard let statusCode = error.response?.statusCode else { return }
+                print("==failure statusCode==", statusCode)
+                if let common = CommonError(rawValue: statusCode) {
+                    completion(.failure(common))
+                } else if let error = errorType.init(rawValue: statusCode) as? Error {
+                    completion(.failure(error))
+                } else {
+                    print("===상태코드 못 찾음===", error)
+                }
             } //switch
         } //provider
         
