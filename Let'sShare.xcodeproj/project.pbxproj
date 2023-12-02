@@ -7,6 +7,12 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		232BC1F52B15B36E00290F67 /* FeedTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 232BC1F42B15B36E00290F67 /* FeedTableViewCell.swift */; };
+		232BC1F72B15B46C00290F67 /* BaseTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 232BC1F62B15B46C00290F67 /* BaseTableViewCell.swift */; };
+		232BC1F92B15B4A600290F67 /* ReusableView+Protocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 232BC1F82B15B4A600290F67 /* ReusableView+Protocol.swift */; };
+		232BC1FB2B15CF4100290F67 /* AuthInterceptor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 232BC1FA2B15CF4100290F67 /* AuthInterceptor.swift */; };
+		232BC1FD2B15F41100290F67 /* UserDefaultsManager+Enum.swift in Sources */ = {isa = PBXBuildFile; fileRef = 232BC1FC2B15F41100290F67 /* UserDefaultsManager+Enum.swift */; };
+		232BC21E2B177BC500290F67 /* WritingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 232BC21D2B177BC500290F67 /* WritingViewController.swift */; };
 		234A71A42B0B7E9A00B8E60B /* .gitignore in Resources */ = {isa = PBXBuildFile; fileRef = 234A71A32B0B7E9A00B8E60B /* .gitignore */; };
 		234A71A72B0B996E00B8E60B /* APIKey.swift in Sources */ = {isa = PBXBuildFile; fileRef = 234A71A62B0B996E00B8E60B /* APIKey.swift */; };
 		234A71A92B0B9B8500B8E60B /* APIManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 234A71A82B0B9B8500B8E60B /* APIManager.swift */; };
@@ -23,6 +29,7 @@
 		236D14FE2B090AE900665205 /* WhiteAndShadowContainerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 236D14FD2B090AE900665205 /* WhiteAndShadowContainerView.swift */; };
 		236D15002B090B2000665205 /* BaseView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 236D14FF2B090B2000665205 /* BaseView.swift */; };
 		236D15032B09188F00665205 /* WelcomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 236D15022B09188F00665205 /* WelcomeViewController.swift */; };
+		238D92FA2B18C0A40026B0F8 /* PostModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 238D92F92B18C0A40026B0F8 /* PostModel.swift */; };
 		23CACC0D2B00E7B9008AC1DD /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23CACC0C2B00E7B9008AC1DD /* AppDelegate.swift */; };
 		23CACC0F2B00E7B9008AC1DD /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23CACC0E2B00E7B9008AC1DD /* SceneDelegate.swift */; };
 		23CACC112B00E7B9008AC1DD /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23CACC102B00E7B9008AC1DD /* LoginViewController.swift */; };
@@ -40,6 +47,12 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		232BC1F42B15B36E00290F67 /* FeedTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedTableViewCell.swift; sourceTree = "<group>"; };
+		232BC1F62B15B46C00290F67 /* BaseTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseTableViewCell.swift; sourceTree = "<group>"; };
+		232BC1F82B15B4A600290F67 /* ReusableView+Protocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ReusableView+Protocol.swift"; sourceTree = "<group>"; };
+		232BC1FA2B15CF4100290F67 /* AuthInterceptor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthInterceptor.swift; sourceTree = "<group>"; };
+		232BC1FC2B15F41100290F67 /* UserDefaultsManager+Enum.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UserDefaultsManager+Enum.swift"; sourceTree = "<group>"; };
+		232BC21D2B177BC500290F67 /* WritingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WritingViewController.swift; sourceTree = "<group>"; };
 		234A71A32B0B7E9A00B8E60B /* .gitignore */ = {isa = PBXFileReference; lastKnownFileType = text; path = .gitignore; sourceTree = "<group>"; };
 		234A71A62B0B996E00B8E60B /* APIKey.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIKey.swift; sourceTree = "<group>"; };
 		234A71A82B0B9B8500B8E60B /* APIManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIManager.swift; sourceTree = "<group>"; };
@@ -54,6 +67,7 @@
 		236D14FD2B090AE900665205 /* WhiteAndShadowContainerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WhiteAndShadowContainerView.swift; sourceTree = "<group>"; };
 		236D14FF2B090B2000665205 /* BaseView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseView.swift; sourceTree = "<group>"; };
 		236D15022B09188F00665205 /* WelcomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WelcomeViewController.swift; sourceTree = "<group>"; };
+		238D92F92B18C0A40026B0F8 /* PostModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostModel.swift; sourceTree = "<group>"; };
 		23CACC092B00E7B9008AC1DD /* Let'sShare.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Let'sShare.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		23CACC0C2B00E7B9008AC1DD /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		23CACC0E2B00E7B9008AC1DD /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -85,6 +99,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		232BC21A2B177B1700290F67 /* Writing */ = {
+			isa = PBXGroup;
+			children = (
+				232BC21D2B177BC500290F67 /* WritingViewController.swift */,
+			);
+			path = Writing;
+			sourceTree = "<group>";
+		};
 		234A71A52B0B995400B8E60B /* Network */ = {
 			isa = PBXGroup;
 			children = (
@@ -93,6 +115,7 @@
 				234A71A62B0B996E00B8E60B /* APIKey.swift */,
 				234A71A82B0B9B8500B8E60B /* APIManager.swift */,
 				234A71C82B0CD26100B8E60B /* API+Enum.swift */,
+				232BC1FA2B15CF4100290F67 /* AuthInterceptor.swift */,
 			);
 			path = Network;
 			sourceTree = "<group>";
@@ -109,6 +132,7 @@
 			isa = PBXGroup;
 			children = (
 				234A71CA2B0CD2CE00B8E60B /* APIModel.swift */,
+				238D92F92B18C0A40026B0F8 /* PostModel.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -117,6 +141,7 @@
 			isa = PBXGroup;
 			children = (
 				2359010B2B12C2AC002C1ABB /* FeedViewController.swift */,
+				232BC1F42B15B36E00290F67 /* FeedTableViewCell.swift */,
 			);
 			path = Feed;
 			sourceTree = "<group>";
@@ -188,6 +213,7 @@
 				23CACC292B00FEF1008AC1DD /* Login */,
 				236D14F72B08EC6C00665205 /* SignUp */,
 				2359010A2B12C240002C1ABB /* Feed */,
+				232BC21A2B177B1700290F67 /* Writing */,
 			);
 			path = Scene;
 			sourceTree = "<group>";
@@ -199,6 +225,8 @@
 				23CACC352B01059B008AC1DD /* Image+Enum.swift */,
 				23FD16192B0898F600D16409 /* ValidationError+Enum.swift */,
 				234A71C62B0CCFD900B8E60B /* ViewModelType+Protocol.swift */,
+				232BC1F82B15B4A600290F67 /* ReusableView+Protocol.swift */,
+				232BC1FC2B15F41100290F67 /* UserDefaultsManager+Enum.swift */,
 			);
 			path = Utility;
 			sourceTree = "<group>";
@@ -208,6 +236,7 @@
 			children = (
 				23CACC272B00FEAD008AC1DD /* BaseViewController.swift */,
 				236D14FF2B090B2000665205 /* BaseView.swift */,
+				232BC1F62B15B46C00290F67 /* BaseTableViewCell.swift */,
 			);
 			path = Base;
 			sourceTree = "<group>";
@@ -307,6 +336,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				2359010C2B12C2AD002C1ABB /* FeedViewController.swift in Sources */,
+				232BC21E2B177BC500290F67 /* WritingViewController.swift in Sources */,
 				236D14FC2B08F54500665205 /* PointColorHoshiTextField.swift in Sources */,
 				23CACC282B00FEAD008AC1DD /* BaseViewController.swift in Sources */,
 				234A71AC2B0BA3F400B8E60B /* SignUpViewModel.swift in Sources */,
@@ -315,18 +345,24 @@
 				236D14FE2B090AE900665205 /* WhiteAndShadowContainerView.swift in Sources */,
 				234A71A92B0B9B8500B8E60B /* APIManager.swift in Sources */,
 				23CACC112B00E7B9008AC1DD /* LoginViewController.swift in Sources */,
+				232BC1F92B15B4A600290F67 /* ReusableView+Protocol.swift in Sources */,
 				236D15032B09188F00665205 /* WelcomeViewController.swift in Sources */,
 				23CACC252B00FCD6008AC1DD /* Color+Enum.swift in Sources */,
 				234A71A72B0B996E00B8E60B /* APIKey.swift in Sources */,
 				23FD161C2B08CE0500D16409 /* LoginViewModel.swift in Sources */,
 				236D14F92B08ECA400665205 /* SignUpViewConroller.swift in Sources */,
 				23CACC0D2B00E7B9008AC1DD /* AppDelegate.swift in Sources */,
+				238D92FA2B18C0A40026B0F8 /* PostModel.swift in Sources */,
+				232BC1FD2B15F41100290F67 /* UserDefaultsManager+Enum.swift in Sources */,
 				234A71CE2B0CE7E400B8E60B /* NetworkError+Enum.swift in Sources */,
+				232BC1FB2B15CF4100290F67 /* AuthInterceptor.swift in Sources */,
 				23CACC362B01059B008AC1DD /* Image+Enum.swift in Sources */,
 				23CACC0F2B00E7B9008AC1DD /* SceneDelegate.swift in Sources */,
 				234A71C72B0CCFDA00B8E60B /* ViewModelType+Protocol.swift in Sources */,
 				234A71CB2B0CD2CE00B8E60B /* APIModel.swift in Sources */,
+				232BC1F72B15B46C00290F67 /* BaseTableViewCell.swift in Sources */,
 				234A71C92B0CD26100B8E60B /* API+Enum.swift in Sources */,
+				232BC1F52B15B36E00290F67 /* FeedTableViewCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
