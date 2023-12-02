@@ -46,6 +46,7 @@ final class WritingViewController: BaseViewController {
         super.viewDidLoad()
         view.backgroundColor = .white
         setBarButton()
+        setToolber()
     }
     
     override func configure() {
@@ -90,6 +91,30 @@ extension WritingViewController {
     }
     
     @objc func backButtonClicked() {
-        print("===뒤로 클릭")
+        //종료할거냐고 얼럿 띄우기
+        dismiss(animated: true)
+    }
+    
+    func setToolber() {
+        let toolbar = UIToolbar()
+        toolbar.sizeToFit()
+        
+        let pictureButton = UIBarButtonItem(image: UIImage(systemName: "photo"), style: .plain, target: self, action: #selector(pictureButtonClicked))
+        let hideKeyboardButton = UIBarButtonItem(image: UIImage(systemName: "keyboard.chevron.compact.down"), style: .plain, target: self, action: #selector(hideKeyboardButtonClicked))
+        let flexibleSpace = UIBarButtonItem(barButtonSystemItem: .flexibleSpace, target: self, action: nil)
+        toolbar.setItems([pictureButton, flexibleSpace, hideKeyboardButton], animated: false)
+        toolbar.barTintColor = .white
+        toolbar.tintColor = .darkGray
+        toolbar.setShadowImage(UIImage(), forToolbarPosition: .bottom)
+        contentTextView.inputAccessoryView = toolbar
+    }
+    
+    @objc func pictureButtonClicked() {
+        print("pictureButtonClicked")
+    }
+    
+    @objc func hideKeyboardButtonClicked() {
+        print("hideKeyboardButtonClicked")
+        view.endEditing(true)
     }
 }
