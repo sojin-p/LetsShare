@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import PhotosUI
 
 final class WritingViewController: BaseViewController {
     
@@ -110,11 +111,25 @@ extension WritingViewController {
     }
     
     @objc func pictureButtonClicked() {
-        print("pictureButtonClicked")
+        
+        var config = PHPickerConfiguration()
+        config.filter = .images
+        
+        let picker = PHPickerViewController(configuration: config)
+        picker.delegate = self
+        present(picker, animated: true)
+        
     }
     
     @objc func hideKeyboardButtonClicked() {
-        print("hideKeyboardButtonClicked")
         view.endEditing(true)
+    }
+}
+
+extension WritingViewController: PHPickerViewControllerDelegate {
+    func picker(_ picker: PHPickerViewController, didFinishPicking results: [PHPickerResult]) {
+        
+        dismiss(animated: true)
+        
     }
 }
