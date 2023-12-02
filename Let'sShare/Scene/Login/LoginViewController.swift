@@ -86,7 +86,7 @@ final class LoginViewController: BaseViewController {
                 UserDefaultsManager.access.myValue = success.token
                 UserDefaultsManager.refresh.myValue = success.refreshToken
                 //화면 전환
-                self?.transition()
+                self?.changeRootVC(FeedViewController())
             case .failure(let failure):
                 if let common = failure as? CommonError {
                     print("=== 공통 에러: ", common.errorDescription)
