@@ -98,15 +98,6 @@ final class LoginViewController: BaseViewController {
         }
     }
     
-    func transition() {
-        let nav = UINavigationController(rootViewController: FeedViewController())
-        let windowScene = UIApplication.shared.connectedScenes.first as? UIWindowScene
-        let sceneDelegate = windowScene?.delegate as? SceneDelegate
-
-        sceneDelegate?.window?.rootViewController = nav
-        sceneDelegate?.window?.makeKeyAndVisible()
-    }
-    
     func bind() {
         
         let input = LoginViewModel.Input(
