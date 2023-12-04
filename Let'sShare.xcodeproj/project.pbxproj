@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		231238F12B1DE34F0038BB1B /* InterestsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 231238F02B1DE34F0038BB1B /* InterestsViewController.swift */; };
 		232BC1F52B15B36E00290F67 /* FeedTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 232BC1F42B15B36E00290F67 /* FeedTableViewCell.swift */; };
 		232BC1F72B15B46C00290F67 /* BaseTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 232BC1F62B15B46C00290F67 /* BaseTableViewCell.swift */; };
 		232BC1F92B15B4A600290F67 /* ReusableView+Protocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 232BC1F82B15B4A600290F67 /* ReusableView+Protocol.swift */; };
@@ -47,6 +48,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		231238F02B1DE34F0038BB1B /* InterestsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InterestsViewController.swift; sourceTree = "<group>"; };
 		232BC1F42B15B36E00290F67 /* FeedTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedTableViewCell.swift; sourceTree = "<group>"; };
 		232BC1F62B15B46C00290F67 /* BaseTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseTableViewCell.swift; sourceTree = "<group>"; };
 		232BC1F82B15B4A600290F67 /* ReusableView+Protocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ReusableView+Protocol.swift"; sourceTree = "<group>"; };
@@ -124,6 +126,14 @@
 			children = (
 			);
 			path = Extension;
+			sourceTree = "<group>";
+		};
+		231238EF2B1DE31D0038BB1B /* Interests */ = {
+			isa = PBXGroup;
+			children = (
+				231238F02B1DE34F0038BB1B /* InterestsViewController.swift */,
+			);
+			path = Interests;
 			sourceTree = "<group>";
 		};
 		232BC21A2B177B1700290F67 /* Writing */ = {
@@ -241,6 +251,7 @@
 				236D14F72B08EC6C00665205 /* SignUp */,
 				2359010A2B12C240002C1ABB /* Feed */,
 				232BC21A2B177B1700290F67 /* Writing */,
+				231238EF2B1DE31D0038BB1B /* Interests */,
 			);
 			path = Scene;
 			sourceTree = "<group>";
@@ -379,6 +390,7 @@
 				238D92FA2B18C0A40026B0F8 /* PostModel.swift in Sources */,
 				232BC1FD2B15F41100290F67 /* UserDefaultsManager+Enum.swift in Sources */,
 				234A71CE2B0CE7E400B8E60B /* NetworkError+Enum.swift in Sources */,
+				231238F12B1DE34F0038BB1B /* InterestsViewController.swift in Sources */,
 				232BC1FB2B15CF4100290F67 /* AuthInterceptor.swift in Sources */,
 				23CACC362B01059B008AC1DD /* Image+Enum.swift in Sources */,
 				23CACC0F2B00E7B9008AC1DD /* SceneDelegate.swift in Sources */,
