@@ -48,7 +48,7 @@ final class AuthInterceptor: RequestInterceptor {
                     print("== 재발급 성공 : ", success)
                     UserDefaultsManager.access.myValue = success.token
                     completion(.retry)
-                case .failure(_):
+                case .failure(let error):
                     print("== 재발급 실패, 재로그인 필요")
                     completion(.doNotRetryWithError(error))
                 }
