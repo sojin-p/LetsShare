@@ -62,6 +62,7 @@ final class WritingViewController: BaseViewController {
         setToolber()
         
         doneButton.addTarget(self, action: #selector(doneButtonClicked), for: .touchUpInside)
+        selectInterestsLabel.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(selectInterestsLabelClicked)))
     }
     
     override func configure() {
@@ -98,14 +99,10 @@ final class WritingViewController: BaseViewController {
 
 extension WritingViewController {
     
-    func setBarButton() {
-        let backBarButton = UIBarButtonItem(image: UIImage(systemName: "xmark"), style: .plain, target: self, action: #selector(backButtonClicked))
-        backBarButton.tintColor = .black
-        
-        let doneBarButton = UIBarButtonItem(customView: doneButton)
-        
-        navigationItem.leftBarButtonItem = backBarButton
-        navigationItem.rightBarButtonItem = doneBarButton
+    @objc func selectInterestsLabelClicked() {
+        print("selectInterestsLabelClicked")
+        let vc = InterestsViewController()
+        present(vc, animated: true)
     }
     
     @objc func backButtonClicked() {
@@ -132,6 +129,16 @@ extension WritingViewController {
 //                }
 //            }
 //        }
+    }
+    
+    func setBarButton() {
+        let backBarButton = UIBarButtonItem(image: UIImage(systemName: "xmark"), style: .plain, target: self, action: #selector(backButtonClicked))
+        backBarButton.tintColor = .black
+        
+        let doneBarButton = UIBarButtonItem(customView: doneButton)
+        
+        navigationItem.leftBarButtonItem = backBarButton
+        navigationItem.rightBarButtonItem = doneBarButton
     }
     
     func setToolber() {
