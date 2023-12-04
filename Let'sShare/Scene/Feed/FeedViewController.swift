@@ -68,28 +68,10 @@ final class FeedViewController: BaseViewController {
     }
     
     @objc func addBarButtonClicked() {
-        print("====clicked")
         let vc = WritingViewController()
         let nav = UINavigationController(rootViewController: vc)
         nav.modalPresentationStyle = .fullScreen
         present(nav, animated: true)
-        
-//        let data = Post(title: "제목입니다", content: "본문입니다~", product_id: "letsShare_sojin_id")
-//        APIManager.shared.callRequest(type: PostResponse.self, api: .createPost(data: data), errorType: AccessTokenError.self) { [weak self] response in
-//            switch response {
-//            case .success(let success):
-//                print("==== 메세지: ", success)
-//            case .failure(let failure):
-//                if let common = failure as? CommonError {
-//                    print("=== CommonError: ", common.errorDescription)
-//                } else if let error = failure as? AccessTokenError {
-//                    print("=== AccessTokenError: ", error.errorDescription)
-//                    if error.rawValue == 419 {
-//                        self?.changeRootVC(LoginViewController())
-//                    }
-//                }
-//            }
-//        }
     }
     
     override func configure() {
