@@ -114,6 +114,7 @@ extension WritingViewController {
         
         var config = PHPickerConfiguration()
         config.filter = .images
+        config.selectionLimit = 10
         
         let picker = PHPickerViewController(configuration: config)
         picker.delegate = self
@@ -127,9 +128,56 @@ extension WritingViewController {
 }
 
 extension WritingViewController: PHPickerViewControllerDelegate {
+    
     func picker(_ picker: PHPickerViewController, didFinishPicking results: [PHPickerResult]) {
         
-        dismiss(animated: true)
+        picker.dismiss(animated: true)
         
+        for result in results {
+            
+            let itemProvider = result.itemProvider
+            if itemProvider.canLoadObject(ofClass: UIImage.self) {
+                itemProvider.loadObject(ofClass: UIImage.self) { [weak self] image, error in
+                    
+                    guard let self = self else { return }
+                    guard let image = image as? UIImage else {
+                        print("Image nil")
+                        return
+                    }
+                    
+                    DispatchQueue.main.async {
+                        let width = self.contentTextView.frame.width
+                        let resizedImage = self.resizeImage(image: image, targetWidth: width)
+                        self.photoIntoTextView(resizedImage)
+                    }
+                    
+                }
+            }
+        }
+        
+    }
+    
+    func resizeImage(image: UIImage, targetWidth: CGFloat) -> UIImage {
+        let originalSize = image.size
+        let targetHeight = originalSize.height * targetWidth / originalSize.width
+        
+        let newSize = CGSize(width: targetWidth, height: targetHeight)
+        let renderer = UIGraphicsImageRenderer(size: newSize)
+        
+        return renderer.image { _ in
+            image.draw(in: CGRect(origin: .zero, size: newSize))
+        }
+    }
+    
+    func photoIntoTextView(_ image: UIImage) {
+        let attachment = NSTextAttachment()
+        attachment.image = image
+        
+        let imageString = NSAttributedString(attachment: attachment)
+        let attributedText = NSMutableAttributedString(attributedString: contentTextView.attributedText)
+        
+        attributedText.append(imageString)
+        
+        contentTextView.attributedText = attributedText
     }
 }
