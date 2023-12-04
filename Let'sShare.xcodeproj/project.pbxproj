@@ -99,6 +99,33 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		231238EA2B1B5DB90038BB1B /* Enum */ = {
+			isa = PBXGroup;
+			children = (
+				23CACC242B00FCD6008AC1DD /* Color+Enum.swift */,
+				23CACC352B01059B008AC1DD /* Image+Enum.swift */,
+				23FD16192B0898F600D16409 /* ValidationError+Enum.swift */,
+				232BC1FC2B15F41100290F67 /* UserDefaultsManager+Enum.swift */,
+			);
+			path = Enum;
+			sourceTree = "<group>";
+		};
+		231238EB2B1B5DC60038BB1B /* Protocol */ = {
+			isa = PBXGroup;
+			children = (
+				234A71C62B0CCFD900B8E60B /* ViewModelType+Protocol.swift */,
+				232BC1F82B15B4A600290F67 /* ReusableView+Protocol.swift */,
+			);
+			path = Protocol;
+			sourceTree = "<group>";
+		};
+		231238EC2B1B5DD00038BB1B /* Extension */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Extension;
+			sourceTree = "<group>";
+		};
 		232BC21A2B177B1700290F67 /* Writing */ = {
 			isa = PBXGroup;
 			children = (
@@ -221,12 +248,9 @@
 		23CACC212B00FCA3008AC1DD /* Utility */ = {
 			isa = PBXGroup;
 			children = (
-				23CACC242B00FCD6008AC1DD /* Color+Enum.swift */,
-				23CACC352B01059B008AC1DD /* Image+Enum.swift */,
-				23FD16192B0898F600D16409 /* ValidationError+Enum.swift */,
-				234A71C62B0CCFD900B8E60B /* ViewModelType+Protocol.swift */,
-				232BC1F82B15B4A600290F67 /* ReusableView+Protocol.swift */,
-				232BC1FC2B15F41100290F67 /* UserDefaultsManager+Enum.swift */,
+				231238EC2B1B5DD00038BB1B /* Extension */,
+				231238EB2B1B5DC60038BB1B /* Protocol */,
+				231238EA2B1B5DB90038BB1B /* Enum */,
 			);
 			path = Utility;
 			sourceTree = "<group>";
