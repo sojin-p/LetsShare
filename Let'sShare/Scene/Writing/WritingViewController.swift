@@ -42,12 +42,26 @@ final class WritingViewController: BaseViewController {
         view.font = .systemFont(ofSize: 16)
         return view
     }()
+    
+    let doneButton = {
+        let view = UIButton()
+        var config = UIButton.Configuration.filled()
+        config.title = "등록"
+        config.baseForegroundColor = .white
+        config.baseBackgroundColor = Color.Point.navy
+        config.cornerStyle = .capsule
+        config.buttonSize = .mini
+        view.configuration = config
+        return view
+    }()
 
     override func viewDidLoad() {
         super.viewDidLoad()
         view.backgroundColor = .white
         setBarButton()
         setToolber()
+        
+        doneButton.addTarget(self, action: #selector(doneButtonClicked), for: .touchUpInside)
     }
     
     override func configure() {
@@ -88,13 +102,20 @@ extension WritingViewController {
         let backBarButton = UIBarButtonItem(image: UIImage(systemName: "xmark"), style: .plain, target: self, action: #selector(backButtonClicked))
         backBarButton.tintColor = .black
         
+        let doneBarButton = UIBarButtonItem(customView: doneButton)
+        
         navigationItem.leftBarButtonItem = backBarButton
+        navigationItem.rightBarButtonItem = doneBarButton
     }
     
     @objc func backButtonClicked() {
         //종료할거냐고 얼럿 띄우기
         dismiss(animated: true)
     }
+    
+    @objc func doneButtonClicked() {
+        print("===doneButtonClicked")
+        
     
     func setToolber() {
         let toolbar = UIToolbar()
