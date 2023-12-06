@@ -31,6 +31,7 @@
 		236D15002B090B2000665205 /* BaseView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 236D14FF2B090B2000665205 /* BaseView.swift */; };
 		236D15032B09188F00665205 /* WelcomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 236D15022B09188F00665205 /* WelcomeViewController.swift */; };
 		238D92FA2B18C0A40026B0F8 /* PostModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 238D92F92B18C0A40026B0F8 /* PostModel.swift */; };
+		23B1A2672B1F0AB10090B849 /* SideMenu in Frameworks */ = {isa = PBXBuildFile; productRef = 23B1A2662B1F0AB10090B849 /* SideMenu */; };
 		23CACC0D2B00E7B9008AC1DD /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23CACC0C2B00E7B9008AC1DD /* AppDelegate.swift */; };
 		23CACC0F2B00E7B9008AC1DD /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23CACC0E2B00E7B9008AC1DD /* SceneDelegate.swift */; };
 		23CACC112B00E7B9008AC1DD /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23CACC102B00E7B9008AC1DD /* LoginViewController.swift */; };
@@ -93,6 +94,7 @@
 				23CACC322B010376008AC1DD /* RxCocoa in Frameworks */,
 				23CACC2C2B010327008AC1DD /* SnapKit in Frameworks */,
 				23CACC342B010376008AC1DD /* RxSwift in Frameworks */,
+				23B1A2672B1F0AB10090B849 /* SideMenu in Frameworks */,
 				234A71C12B0C7C4F00B8E60B /* Moya in Frameworks */,
 				23CACC2F2B010350008AC1DD /* TextFieldEffects in Frameworks */,
 			);
@@ -308,6 +310,7 @@
 				23CACC332B010376008AC1DD /* RxSwift */,
 				234A71C02B0C7C4F00B8E60B /* Moya */,
 				234A71C22B0C7C4F00B8E60B /* RxMoya */,
+				23B1A2662B1F0AB10090B849 /* SideMenu */,
 			);
 			productName = "Let'sShare";
 			productReference = 23CACC092B00E7B9008AC1DD /* Let'sShare.app */;
@@ -342,6 +345,7 @@
 				23CACC2D2B01034F008AC1DD /* XCRemoteSwiftPackageReference "TextFieldEffects" */,
 				23CACC302B010375008AC1DD /* XCRemoteSwiftPackageReference "RxSwift" */,
 				234A71BF2B0C7C4F00B8E60B /* XCRemoteSwiftPackageReference "Moya" */,
+				23B1A2652B1F0AB10090B849 /* XCRemoteSwiftPackageReference "SideMenu" */,
 			);
 			productRefGroup = 23CACC0A2B00E7B9008AC1DD /* Products */;
 			projectDirPath = "";
@@ -629,6 +633,14 @@
 				minimumVersion = 15.0.3;
 			};
 		};
+		23B1A2652B1F0AB10090B849 /* XCRemoteSwiftPackageReference "SideMenu" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/jonkykong/SideMenu.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 6.5.0;
+			};
+		};
 		23CACC2A2B010327008AC1DD /* XCRemoteSwiftPackageReference "SnapKit" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/SnapKit/SnapKit.git";
@@ -665,6 +677,11 @@
 			isa = XCSwiftPackageProductDependency;
 			package = 234A71BF2B0C7C4F00B8E60B /* XCRemoteSwiftPackageReference "Moya" */;
 			productName = RxMoya;
+		};
+		23B1A2662B1F0AB10090B849 /* SideMenu */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 23B1A2652B1F0AB10090B849 /* XCRemoteSwiftPackageReference "SideMenu" */;
+			productName = SideMenu;
 		};
 		23CACC2B2B010327008AC1DD /* SnapKit */ = {
 			isa = XCSwiftPackageProductDependency;
