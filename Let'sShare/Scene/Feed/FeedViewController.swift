@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import SideMenu
 
 final class FeedViewController: BaseViewController {
     
@@ -65,6 +66,14 @@ final class FeedViewController: BaseViewController {
         tableView.dataSource = self
         
         setToolbarButton()
+        
+        let menuBarButton = UIBarButtonItem(title: nil, image: UIImage(systemName: "star"), target: self, action: #selector(menuBarButtonClicked))
+        navigationItem.leftBarButtonItem = menuBarButton
+    }
+    
+    @objc func menuBarButtonClicked() {
+        present(setSideMenu(), animated: true)
+        print("=====menuBarButtonClicked")
     }
     
     @objc func addBarButtonClicked() {
@@ -111,6 +120,15 @@ extension FeedViewController {
         let edgeSpace = UIBarButtonItem(barButtonSystemItem: .fixedSpace, target: self, action: nil)
         [edgeSpace, refreshBarButton, flexibleSpace, addBarButton, flexibleSpace, searchBarButton, edgeSpace].forEach { items.append($0) }
         self.toolbarItems = items
+    }
+    
+    func setSideMenu() -> SideMenuNavigationController {
+        let menu = SideMenuNavigationController(rootViewController: InterestsViewController())
+        menu.leftSide = true
+        SideMenuManager.default.leftMenuNavigationController = menu
+        SideMenuManager.default.addPanGestureToPresent(toView: view)
+        menu.presentationStyle = .menuSlideIn
+        return menu
     }
     
 }
