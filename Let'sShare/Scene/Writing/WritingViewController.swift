@@ -181,7 +181,18 @@ extension WritingViewController: PHPickerViewControllerDelegate {
         for result in results {
             
             let itemProvider = result.itemProvider
-            if itemProvider.canLoadObject(ofClass: UIImage.self) {
+            
+            if itemProvider.hasItemConformingToTypeIdentifier(UTType.webP.identifier) {
+                itemProvider.loadDataRepresentation(forTypeIdentifier: UTType.webP.identifier) { [weak self] data, error in
+                    
+                    guard let self = self else { return }
+                    if let data = data, let image = UIImage.init(data: data) {
+                        getImages(image)
+                    }
+                    
+                }
+                
+            } else if itemProvider.canLoadObject(ofClass: UIImage.self) {
                 itemProvider.loadObject(ofClass: UIImage.self) { [weak self] image, error in
                     
                     guard let self = self else { return }
@@ -189,17 +200,23 @@ extension WritingViewController: PHPickerViewControllerDelegate {
                         print("Image nil")
                         return
                     }
-                    
-                    DispatchQueue.main.async {
-                        let width = self.contentTextView.frame.width
-                        let resizedImage = self.resizeImage(image: image, targetWidth: width)
-                        self.photoIntoTextView(resizedImage)
-                    }
+                    getImages(image)
                     
                 }
+                
+            } else {
+                print("이미지 가져오기 실패")
             }
         }
         
+    }
+    
+    func getImages(_ image: UIImage) {
+        DispatchQueue.main.async {
+            let width = self.contentTextView.frame.width
+            let resizedImage = self.resizeImage(image: image, targetWidth: width)
+            self.photoIntoTextView(resizedImage)
+        }
     }
     
     func resizeImage(image: UIImage, targetWidth: CGFloat) -> UIImage {
