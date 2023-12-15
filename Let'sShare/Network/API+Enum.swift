@@ -81,7 +81,16 @@ extension UserAPI {
         let contentData = MultipartFormData(
             provider: .data(data.content.data(using: .utf8)!),
             name: "content")
-        let multipartData: [MultipartFormData] = [productIDData, titleData, contentData]
+        
+        let imageData: [MultipartFormData] = data.imageData.map { imageData in
+            return MultipartFormData(
+                provider: .data(imageData),
+                name: "file",
+                fileName: "\(data.imageData).jpeg",
+                mimeType: "image/jpeg")
+        }
+        
+        let multipartData: [MultipartFormData] = [productIDData, titleData, contentData] + imageData
         return multipartData
     }
     
