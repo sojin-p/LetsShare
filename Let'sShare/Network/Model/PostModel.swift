@@ -10,6 +10,7 @@ import Foundation
 struct Post: Encodable {
     let title: String
     let content: String
+    let imageData: [Data]
     let product_id: String
 }
 
