@@ -219,6 +219,11 @@ extension WritingViewController: PHPickerViewControllerDelegate {
         }
     }
     
+    func imageToData(_ image: UIImage) -> Data {
+        guard let imageData = image.jpegData(compressionQuality: 0.1) else { return Data() }
+        return imageData
+    }
+    
     func resizeImage(image: UIImage, targetWidth: CGFloat) -> UIImage {
         let originalSize = image.size
         let targetHeight = originalSize.height * targetWidth / originalSize.width
