@@ -219,6 +219,26 @@ extension WritingViewController: PHPickerViewControllerDelegate {
         }
     }
     
+    func getImagesFromTextView(_ textView: UITextView) -> [Data] {
+        
+        var imageData: [Data] = []
+        
+        if let attributedText = textView.attributedText {
+            attributedText.enumerateAttribute(.attachment, in: NSRange(location: 0, length: attributedText.length), options: []) { value, range, _ in
+                
+                if let attachment = value as? NSTextAttachment {
+                    if let image = attachment.image {
+                        imageData.append(imageToData(image))
+                    }
+                }
+                
+            }
+        }
+        
+        return imageData
+        
+    }
+    
     func imageToData(_ image: UIImage) -> Data {
         guard let imageData = image.jpegData(compressionQuality: 0.1) else { return Data() }
         return imageData
