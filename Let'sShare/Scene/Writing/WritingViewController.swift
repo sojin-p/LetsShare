@@ -186,7 +186,7 @@ extension WritingViewController: PHPickerViewControllerDelegate {
                 itemProvider.loadDataRepresentation(forTypeIdentifier: UTType.webP.identifier) { [weak self] data, error in
                     
                     guard let self = self else { return }
-                    if let data = data, let image = UIImage.init(data: data) {
+                    if let data = data, let image = UIImage(data: data) {
                         getImages(image)
                     }
                     
