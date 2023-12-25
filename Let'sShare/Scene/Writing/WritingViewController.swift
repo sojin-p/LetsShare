@@ -159,7 +159,7 @@ extension WritingViewController {
         
         var config = PHPickerConfiguration()
         config.filter = .images
-        config.selectionLimit = 10
+        config.selectionLimit = 5
         
         let picker = PHPickerViewController(configuration: config)
         picker.delegate = self
