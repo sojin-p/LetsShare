@@ -111,7 +111,6 @@ extension WritingViewController {
     }
     
     @objc func doneButtonClicked() {
-        print("===doneButtonClicked")
         
 //        let data = Post(title: "제목입니다", content: "본문입니다~", product_id: "letsShare_sojin_id")
 //        APIManager.shared.callRequest(type: PostResponse.self, api: .createPost(data: data), errorType: AccessTokenError.self) { [weak self] response in
