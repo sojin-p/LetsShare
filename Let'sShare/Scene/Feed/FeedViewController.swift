@@ -59,7 +59,26 @@ final class FeedViewController: BaseViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        print(#function)
+        
+        APIManager.shared.callRequest(type: PostDataResponse.self, api: .Post(next: "", limit: "", productId: "letsShare_sojin_id"), errorType: AccessTokenError.self) { [weak self] response in
+            
+            switch response {
+            case .success(let success):
+                print("==== 메세지: ", success)
+                
+            case .failure(let failure):
+                if let common = failure as? CommonError {
+                    print("=== CommonError: ", common.errorDescription)
+                } else if let error = failure as? AccessTokenError {
+                    print("=== AccessTokenError: ", error.errorDescription)
+                    if error.rawValue == 419 {
+                        self?.changeRootVC(LoginViewController())
+                    }
+                }
+            }
+            
+        }
+        
         view.backgroundColor = .lightGray
         
         tableView.delegate = self
