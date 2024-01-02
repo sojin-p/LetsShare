@@ -126,6 +126,8 @@ extension WritingViewController {
             switch response {
             case .success(let success):
                 print("==== 메세지: ", success)
+                //메인 게시글로 화면 전환
+                
             case .failure(let failure):
                 if let common = failure as? CommonError {
                     print("=== CommonError: ", common.errorDescription)
