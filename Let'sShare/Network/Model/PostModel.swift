@@ -22,9 +22,15 @@ struct PostResponse: Decodable {
     let title: String
     let content: String
     let product_id: String
+    let image: [String]
 }
 
 struct Creator: Decodable {
     let _id: String
     let nick: String
+}
+
+struct PostDataResponse: Decodable {
+    let data: [PostResponse]
+    let next_cursor: String
 }
