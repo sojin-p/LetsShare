@@ -24,6 +24,7 @@ final class FeedTableViewCell: BaseTableViewCell {
         view.layer.cornerRadius = 10
         view.contentMode = .scaleAspectFill
 //        view.isHidden = true
+        view.clipsToBounds = true
         return view
     }()
     
