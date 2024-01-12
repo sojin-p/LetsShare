@@ -9,7 +9,7 @@ import UIKit
 
 final class FeedTableViewCell: BaseTableViewCell {
     
-    let stackView = {
+    private let stackView = {
         let view = UIStackView()
         view.axis = .horizontal
         view.alignment = .center
@@ -27,7 +27,7 @@ final class FeedTableViewCell: BaseTableViewCell {
         return view
     }()
     
-    let labelStackView = {
+    private let labelStackView = {
         let view = UIStackView()
         view.axis = .vertical
         view.distribution = .fill
