@@ -7,6 +7,7 @@
 
 import UIKit
 import SideMenu
+import Kingfisher
 
 final class FeedViewController: BaseViewController {
     
@@ -57,14 +58,33 @@ final class FeedViewController: BaseViewController {
         return barButton
     }()
     
+    var postData = PostDataResponse(data: [], next_cursor: "")
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        view.backgroundColor = .lightGray
+        
+        tableView.delegate = self
+        tableView.dataSource = self
+        
+        setToolbarButton()
+        requestPost()
+        
+        let menuBarButton = UIBarButtonItem(title: nil, image: UIImage(systemName: "star"), target: self, action: #selector(menuBarButtonClicked))
+        navigationItem.leftBarButtonItem = menuBarButton
+        
+    }
+    
+    func requestPost() {
         APIManager.shared.callRequest(type: PostDataResponse.self, api: .Post(next: "", limit: "", productId: "letsShare_sojin_id"), errorType: AccessTokenError.self) { [weak self] response in
             
             switch response {
             case .success(let success):
-                print("==== 메세지: ", success)
+//                print("==== 메세지: ", success)
+                self?.postData.data.append(contentsOf: success.data)
+                print("========= 포스트 :", self?.postData)
+                self?.tableView.reloadData()
                 
             case .failure(let failure):
                 if let common = failure as? CommonError {
@@ -78,16 +98,6 @@ final class FeedViewController: BaseViewController {
             }
             
         }
-        
-        view.backgroundColor = .lightGray
-        
-        tableView.delegate = self
-        tableView.dataSource = self
-        
-        setToolbarButton()
-        
-        let menuBarButton = UIBarButtonItem(title: nil, image: UIImage(systemName: "star"), target: self, action: #selector(menuBarButtonClicked))
-        navigationItem.leftBarButtonItem = menuBarButton
     }
     
     @objc func menuBarButtonClicked() {
@@ -117,11 +127,33 @@ final class FeedViewController: BaseViewController {
 extension FeedViewController: UITableViewDelegate, UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 10
+        return postData.data.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         guard let cell = tableView.dequeueReusableCell(withIdentifier: FeedTableViewCell.identifier) as? FeedTableViewCell else { return UITableViewCell() }
+        
+        let post = postData.data[indexPath.row]
+        
+        cell.titleLabel.text = post.title
+        cell.subTitleLabel.text = "\(post.creator.nick) \(post.time)"
+        
+        let urlString = BaseURL.devURL + (post.image.first ?? "NoImage")
+        print("=====",urlString)
+        
+        let imageDownloadRequest = AnyModifier { request in
+            var requestBody = request
+            requestBody.setValue(UserDefaultsManager.access.myValue, forHTTPHeaderField: "Authorization")
+            requestBody.setValue(APIKey.sesac, forHTTPHeaderField: "SesacKey")
+            return requestBody
+        }
+        
+        if let url = URL(string: urlString) {
+            let options: KingfisherOptionsInfo = [.requestModifier(imageDownloadRequest)]
+            cell.thumbImageView.kf.setImage(with: url, options: options)
+        } else {
+            print("=== url 오류")
+        }
         
         return cell
     }
