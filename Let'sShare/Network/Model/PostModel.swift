@@ -31,6 +31,6 @@ struct Creator: Decodable {
 }
 
 struct PostDataResponse: Decodable {
-    let data: [PostResponse]
+    var data: [PostResponse]
     let next_cursor: String
 }
