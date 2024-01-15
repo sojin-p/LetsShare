@@ -27,7 +27,7 @@ enum LoginValidationError: Error {
         case .emptyString:
             return ""
         case .invalidEmail:
-            return "^([0-9a-z._-])+@[A-Za-z0-9.-]+.[A-Za-z]{2,20}$"
+            return "^([0-9a-z._-])+@[A-Za-z0-9.-]+\\.[A-Za-z]{2,20}$"
         case .invalidPassword:
             return "^(?=.*[A-Za-z])(?=.*[0-9])(?=.*[!@#$%^&*()_+=-]).{6,30}$"
         case .invalidNickname:
