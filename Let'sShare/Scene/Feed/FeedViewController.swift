@@ -157,6 +157,12 @@ extension FeedViewController: UITableViewDelegate, UITableViewDataSource {
         return cell
     }
     
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        print("===didselect")
+        let vc = PostDetailViewController()
+        navigationController?.pushViewController(vc, animated: true)
+    }
+    
 }
 
 extension FeedViewController {
