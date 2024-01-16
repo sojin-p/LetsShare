@@ -138,9 +138,6 @@ extension FeedViewController: UITableViewDelegate, UITableViewDataSource {
         cell.titleLabel.text = post.title
         cell.subTitleLabel.text = "\(post.creator.nick) \(post.time)"
         
-        let urlString = BaseURL.devURL + (post.image.first ?? "NoImage")
-        print("=====",urlString)
-        
         let imageDownloadRequest = AnyModifier { request in
             var requestBody = request
             requestBody.setValue(UserDefaultsManager.access.myValue, forHTTPHeaderField: "Authorization")
@@ -148,11 +145,13 @@ extension FeedViewController: UITableViewDelegate, UITableViewDataSource {
             return requestBody
         }
         
-        if let url = URL(string: urlString) {
+        if let firstImage = post.image.first, let url = URL(string: BaseURL.devURL + firstImage) {
             let options: KingfisherOptionsInfo = [.requestModifier(imageDownloadRequest)]
             cell.thumbImageView.kf.setImage(with: url, options: options)
-        } else {
-            print("=== url 오류")
+            print("=====", url)
+        } else{
+            print("=== url 오류 or image nil")
+            cell.thumbImageView.isHidden = true
         }
         
         return cell
