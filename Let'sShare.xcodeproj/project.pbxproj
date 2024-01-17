@@ -10,6 +10,8 @@
 		231238F12B1DE34F0038BB1B /* InterestsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 231238F02B1DE34F0038BB1B /* InterestsViewController.swift */; };
 		2318AE3E2B4437B9002508B3 /* Kingfisher in Frameworks */ = {isa = PBXBuildFile; productRef = 2318AE3D2B4437B9002508B3 /* Kingfisher */; };
 		2318AE832B55563A002508B3 /* PostDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2318AE822B55563A002508B3 /* PostDetailViewController.swift */; };
+		2318AE852B56484D002508B3 /* PostDetailTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2318AE842B56484D002508B3 /* PostDetailTableViewCell.swift */; };
+		2318AE872B57B2D3002508B3 /* DareFormatType+Enum.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2318AE862B57B2D3002508B3 /* DareFormatType+Enum.swift */; };
 		232BC1F52B15B36E00290F67 /* FeedTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 232BC1F42B15B36E00290F67 /* FeedTableViewCell.swift */; };
 		232BC1F72B15B46C00290F67 /* BaseTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 232BC1F62B15B46C00290F67 /* BaseTableViewCell.swift */; };
 		232BC1F92B15B4A600290F67 /* ReusableView+Protocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 232BC1F82B15B4A600290F67 /* ReusableView+Protocol.swift */; };
@@ -53,6 +55,8 @@
 /* Begin PBXFileReference section */
 		231238F02B1DE34F0038BB1B /* InterestsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InterestsViewController.swift; sourceTree = "<group>"; };
 		2318AE822B55563A002508B3 /* PostDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostDetailViewController.swift; sourceTree = "<group>"; };
+		2318AE842B56484D002508B3 /* PostDetailTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostDetailTableViewCell.swift; sourceTree = "<group>"; };
+		2318AE862B57B2D3002508B3 /* DareFormatType+Enum.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "DareFormatType+Enum.swift"; sourceTree = "<group>"; };
 		232BC1F42B15B36E00290F67 /* FeedTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedTableViewCell.swift; sourceTree = "<group>"; };
 		232BC1F62B15B46C00290F67 /* BaseTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseTableViewCell.swift; sourceTree = "<group>"; };
 		232BC1F82B15B4A600290F67 /* ReusableView+Protocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ReusableView+Protocol.swift"; sourceTree = "<group>"; };
@@ -114,6 +118,7 @@
 				23CACC352B01059B008AC1DD /* Image+Enum.swift */,
 				23FD16192B0898F600D16409 /* ValidationError+Enum.swift */,
 				232BC1FC2B15F41100290F67 /* UserDefaultsManager+Enum.swift */,
+				2318AE862B57B2D3002508B3 /* DareFormatType+Enum.swift */,
 			);
 			path = Enum;
 			sourceTree = "<group>";
@@ -146,6 +151,7 @@
 			isa = PBXGroup;
 			children = (
 				2318AE822B55563A002508B3 /* PostDetailViewController.swift */,
+				2318AE842B56484D002508B3 /* PostDetailTableViewCell.swift */,
 			);
 			path = PostDetail;
 			sourceTree = "<group>";
@@ -406,10 +412,12 @@
 				234A71A72B0B996E00B8E60B /* APIKey.swift in Sources */,
 				23FD161C2B08CE0500D16409 /* LoginViewModel.swift in Sources */,
 				236D14F92B08ECA400665205 /* SignUpViewConroller.swift in Sources */,
+				2318AE852B56484D002508B3 /* PostDetailTableViewCell.swift in Sources */,
 				23CACC0D2B00E7B9008AC1DD /* AppDelegate.swift in Sources */,
 				238D92FA2B18C0A40026B0F8 /* PostModel.swift in Sources */,
 				232BC1FD2B15F41100290F67 /* UserDefaultsManager+Enum.swift in Sources */,
 				234A71CE2B0CE7E400B8E60B /* NetworkError+Enum.swift in Sources */,
+				2318AE872B57B2D3002508B3 /* DareFormatType+Enum.swift in Sources */,
 				231238F12B1DE34F0038BB1B /* InterestsViewController.swift in Sources */,
 				232BC1FB2B15CF4100290F67 /* AuthInterceptor.swift in Sources */,
 				23CACC362B01059B008AC1DD /* Image+Enum.swift in Sources */,
