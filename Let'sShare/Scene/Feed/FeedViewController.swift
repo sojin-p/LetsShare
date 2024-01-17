@@ -136,7 +136,11 @@ extension FeedViewController: UITableViewDelegate, UITableViewDataSource {
         let post = postData.data[indexPath.row]
         
         cell.titleLabel.text = post.title
-        cell.subTitleLabel.text = "\(post.creator.nick) \(post.time)"
+        
+        let timeToDate = post.time.toDate(to: .full) ?? Date()
+        let timeToString = timeToDate.toString(of: .full)
+        
+        cell.subTitleLabel.text = "\(post.creator.nick) \(timeToString)"
         
         let imageDownloadRequest = AnyModifier { request in
             var requestBody = request
