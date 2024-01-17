@@ -37,7 +37,7 @@ extension String {
     func toDate(to type: DateFormatType) -> Date? {
         let formatter = DateFormatter()
         formatter.timeZone = TimeZone(identifier: TimeZone.current.identifier)
-        formatter.dateFormat = type.description
+        formatter.dateFormat = "yyyy-MM-dd'T'HH:mm:ss.SSSZ"
         return formatter.date(from: self)
     }
     
