@@ -24,6 +24,8 @@ final class InterestsViewController: BaseViewController {
         return view
     }()
 
+    var completion: (() -> Void)?
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -33,6 +35,11 @@ final class InterestsViewController: BaseViewController {
         
         tableView.delegate = self
         tableView.dataSource = self
+    }
+    
+    override func viewWillDisappear(_ animated: Bool) {
+        super.viewWillDisappear(animated)
+        completion?()
     }
     
     override func configure() {

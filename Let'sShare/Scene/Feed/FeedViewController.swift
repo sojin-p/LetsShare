@@ -58,6 +58,13 @@ final class FeedViewController: BaseViewController {
         return barButton
     }()
     
+    let backAlphaView = {
+        let view = UIView()
+        view.backgroundColor = UIColor(red: 0, green: 0, blue: 0, alpha: 0.5)
+        view.isHidden = true
+        return view
+    }()
+    
     var postData = PostDataResponse(data: [], next_cursor: "")
     
     override func viewDidLoad() {
@@ -71,7 +78,7 @@ final class FeedViewController: BaseViewController {
         setToolbarButton()
         requestPost()
         
-        let menuBarButton = UIBarButtonItem(title: nil, image: UIImage(systemName: "star"), target: self, action: #selector(menuBarButtonClicked))
+        let menuBarButton = UIBarButtonItem(title: nil, image: UIImage(resource: .sidebarIcon), target: self, action: #selector(menuBarButtonClicked))
         navigationItem.leftBarButtonItem = menuBarButton
         
     }
@@ -101,6 +108,7 @@ final class FeedViewController: BaseViewController {
     }
     
     @objc func menuBarButtonClicked() {
+        backAlphaView.isHidden = false
         present(setSideMenu(), animated: true)
         print("=====menuBarButtonClicked")
     }
@@ -113,12 +121,16 @@ final class FeedViewController: BaseViewController {
     }
     
     override func configure() {
-        [tableView].forEach { view.addSubview($0) }
+        [tableView, backAlphaView].forEach { view.addSubview($0) }
     }
     
     override func setConstraints() {
         tableView.snp.makeConstraints { make in
             make.edges.equalToSuperview()
+        }
+        
+        backAlphaView.snp.makeConstraints { make in
+            make.edges.equalTo(tableView)
         }
     }
     
@@ -183,11 +195,17 @@ extension FeedViewController {
     }
     
     func setSideMenu() -> SideMenuNavigationController {
-        let menu = SideMenuNavigationController(rootViewController: InterestsViewController())
+        let vc = InterestsViewController()
+        let menu = SideMenuNavigationController(rootViewController: vc)
         menu.leftSide = true
         SideMenuManager.default.leftMenuNavigationController = menu
         SideMenuManager.default.addPanGestureToPresent(toView: view)
         menu.presentationStyle = .menuSlideIn
+        
+        vc.completion = { [weak self] in
+            self?.backAlphaView.isHidden = true
+        }
+        
         return menu
     }
     
