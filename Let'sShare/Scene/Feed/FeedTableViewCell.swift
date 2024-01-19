@@ -65,6 +65,13 @@ final class FeedTableViewCell: BaseTableViewCell {
         return view
     }()
     
+    override func prepareForReuse() {
+        thumbImageView.image = nil
+        titleLabel.text = nil
+        subTitleLabel.text = nil
+        commentslabel.text = nil
+    }
+    
     override func configure() {
         [stackView].forEach { contentView.addSubview($0) }
         [thumbImageView, labelStackView, commentslabel].forEach { stackView.addArrangedSubview($0) }
