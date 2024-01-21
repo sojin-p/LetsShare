@@ -12,24 +12,28 @@ final class PostDetailTableViewCell: BaseTableViewCell {
     let titleLabel = {
         let view = UILabel()
         view.text = "타이틀입니다"
+        view.font = .systemFont(ofSize: 18, weight: .regular)
         return view
     }()
     
     let userLabel = {
         let view = UILabel()
         view.text = "닉네임 2024.01.01"
+        view.font = .systemFont(ofSize: 13, weight: .regular)
+        view.textColor = .systemGray2
         return view
     }()
     
     private let lineView = {
         let view = UIView()
-        view.backgroundColor = .black
+        view.backgroundColor = .systemGray4
         return view
     }()
     
     let contentTextView = {
         let view = UITextView()
         view.text = "내용입니다."
+        view.font = .systemFont(ofSize: 15, weight: .regular)
         view.isEditable = false
         return view
     }()
@@ -47,12 +51,12 @@ final class PostDetailTableViewCell: BaseTableViewCell {
         }
         
         userLabel.snp.makeConstraints { make in
-            make.top.equalTo(titleLabel.snp.bottom).offset(5)
+            make.top.equalTo(titleLabel.snp.bottom).offset(8)
             make.horizontalEdges.equalTo(titleLabel)
         }
         
         lineView.snp.makeConstraints { make in
-            make.top.equalTo(userLabel.snp.bottom).offset(15)
+            make.top.equalTo(userLabel.snp.bottom).offset(16)
             make.horizontalEdges.equalTo(titleLabel)
             make.height.equalTo(1)
         }
