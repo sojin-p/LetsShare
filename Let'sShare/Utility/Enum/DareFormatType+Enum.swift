@@ -14,7 +14,7 @@ enum DateFormatType {
     
     var description: String {
         switch self {
-        case .full: "yyyy.MM.dd HH:mm"
+        case .full: "yyyy.MM.dd  HH:mm"
         case .withoutTime: "yyyy.MM.dd"
         case .justTime: "HH:mm"
         }
