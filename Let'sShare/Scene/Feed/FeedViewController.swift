@@ -84,7 +84,7 @@ final class FeedViewController: BaseViewController {
     }
     
     func requestPost() {
-        APIManager.shared.callRequest(type: PostDataResponse.self, api: .Post(next: "", limit: "", productId: "letsShare_sojin_id"), errorType: AccessTokenError.self) { [weak self] response in
+        APIManager.shared.callRequest(type: PostDataResponse.self, api: .Post(next: "", limit: "20", productId: "letsShare_sojin_id"), errorType: AccessTokenError.self) { [weak self] response in
             
             switch response {
             case .success(let success):
@@ -165,7 +165,7 @@ extension FeedViewController: UITableViewDelegate, UITableViewDataSource {
             let options: KingfisherOptionsInfo = [.requestModifier(imageDownloadRequest)]
             cell.thumbImageView.kf.setImage(with: url, options: options)
             print("=====", url)
-        } else{
+        } else {
             print("=== url 오류 or image nil")
             cell.thumbImageView.isHidden = true
         }
