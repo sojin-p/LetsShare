@@ -26,6 +26,8 @@ final class InterestsViewController: BaseViewController {
 
     var completion: (() -> Void)?
     
+    let list = ["ALL", "맛집", "여행", "운동/스포츠", "문화/예술", "IT", "요리", "사회/정치", "영화/드라마", "교육", "자연/환경"]
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -64,14 +66,14 @@ final class InterestsViewController: BaseViewController {
 extension InterestsViewController: UITableViewDelegate, UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 10
+        return list.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
         let cell = tableView.dequeueReusableCell(withIdentifier: "Cell", for: indexPath)
         
-        cell.textLabel?.text = "여행"
+        cell.textLabel?.text = list[indexPath.row]
         
         return cell
     }
