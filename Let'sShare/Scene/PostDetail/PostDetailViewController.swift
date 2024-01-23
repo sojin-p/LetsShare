@@ -15,6 +15,8 @@ final class PostDetailViewController: BaseViewController {
         view.rowHeight = 200
         return view
     }()
+    
+    var postData: PostResponse?
 
     override func viewDidLoad() {
         super.viewDidLoad()
