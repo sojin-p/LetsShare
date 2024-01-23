@@ -78,7 +78,7 @@ final class FeedViewController: BaseViewController {
         setToolbarButton()
         requestPost()
         
-        let menuBarButton = UIBarButtonItem(title: nil, image: UIImage(resource: .sidebarIcon), target: self, action: #selector(menuBarButtonClicked))
+        let menuBarButton = UIBarButtonItem(title: nil, image: Image.sidebarIcon, target: self, action: #selector(menuBarButtonClicked))
         navigationItem.leftBarButtonItem = menuBarButton
         
     }

@@ -10,4 +10,5 @@ import UIKit
 enum Image {
     static let icon = UIImage(resource: .icon)
     static let backIcon = UIImage(resource: .backIcon)
+    static let sidebarIcon = UIImage(resource: .sidebarIcon).withRenderingMode(.alwaysOriginal)
 }
