@@ -6,13 +6,15 @@
 //
 
 import UIKit
+import Kingfisher
 
 final class PostDetailViewController: BaseViewController {
     
     let tableView = {
         let view = UITableView()
         view.register(PostDetailTableViewCell.self, forCellReuseIdentifier: PostDetailTableViewCell.identifier)
-        view.rowHeight = 200
+        view.rowHeight = 800
+        view.separatorStyle = .none
         return view
     }()
     
@@ -23,6 +25,7 @@ final class PostDetailViewController: BaseViewController {
         view.backgroundColor = .pointYellow
         title = "상세화면"
         tableView.dataSource = self
+        tableView.reloadData()
     }
     
     override func configure() {
@@ -51,8 +54,49 @@ extension PostDetailViewController: UITableViewDataSource {
         
         guard let cell = tableView.dequeueReusableCell(withIdentifier: PostDetailTableViewCell.identifier) as? PostDetailTableViewCell else { return UITableViewCell() }
         
+        guard let postData else { return UITableViewCell() }
+        
+        cell.contentTextView.text = postData.content
+        cell.titleLabel.text = postData.title
+        
+        let timeToDate = postData.time.toDate(to: .full) ?? Date()
+        let timeToString = timeToDate.toString(of: .full)
+        cell.userLabel.text = "\(postData.creator.nick)   \(timeToString)"
+    
+        DispatchQueue.main.async {
+            self.addImagesToTextView(textView: cell.contentTextView)
+        }
+        
         return cell
         
+    }
+    
+}
+
+extension PostDetailViewController {
+    
+    func addImagesToTextView(textView: UITextView) {
+        
+        guard let postData else { return }
+        
+        for imageString in postData.image {
+            
+            if let imageURL = URL(string: BaseURL.devURL + imageString) {
+                print("=== imageURL : ", imageURL)
+                KingfisherManager.shared.retrieveImage(with: imageURL) { [weak self] result in
+                    switch result {
+                    case .success(let value):
+                        
+                        self?.getImages(value.image, textView: textView)
+                        
+                    case .failure(let error):
+                        print("== 이미지 다운 실패: \(error)")
+                    }
+                }
+                
+            } //if let imageURL
+            
+        } //for in
     }
     
 }
