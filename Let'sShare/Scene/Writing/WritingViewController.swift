@@ -198,7 +198,7 @@ extension WritingViewController: PHPickerViewControllerDelegate {
                     
                     guard let self = self else { return }
                     if let data = data, let image = UIImage(data: data) {
-                        getImages(image)
+                        getImages(image, textView: self.contentTextView)
                     }
                     
                 }
@@ -211,7 +211,7 @@ extension WritingViewController: PHPickerViewControllerDelegate {
                         print("Image nil")
                         return
                     }
-                    getImages(image)
+                    getImages(image, textView: self.contentTextView)
                     
                 }
                 
@@ -220,14 +220,6 @@ extension WritingViewController: PHPickerViewControllerDelegate {
             }
         }
         
-    }
-    
-    func getImages(_ image: UIImage) {
-        DispatchQueue.main.async {
-            let width = self.contentTextView.frame.width
-            let resizedImage = self.resizeImage(image: image, targetWidth: width)
-            self.photoIntoTextView(resizedImage)
-        }
     }
     
     func getImagesFromTextView(_ textView: UITextView) -> [Data] {
@@ -251,31 +243,8 @@ extension WritingViewController: PHPickerViewControllerDelegate {
     }
     
     func imageToData(_ image: UIImage) -> Data {
-        guard let imageData = image.jpegData(compressionQuality: 0.1) else { return Data() }
+        guard let imageData = image.jpegData(compressionQuality: 1.0) else { return Data() }
         return imageData
     }
     
-    func resizeImage(image: UIImage, targetWidth: CGFloat) -> UIImage {
-        let originalSize = image.size
-        let targetHeight = originalSize.height * targetWidth / originalSize.width
-        
-        let newSize = CGSize(width: targetWidth, height: targetHeight)
-        let renderer = UIGraphicsImageRenderer(size: newSize)
-        
-        return renderer.image { _ in
-            image.draw(in: CGRect(origin: .zero, size: newSize))
-        }
-    }
-    
-    func photoIntoTextView(_ image: UIImage) {
-        let attachment = NSTextAttachment()
-        attachment.image = image
-        
-        let imageString = NSAttributedString(attachment: attachment)
-        let attributedText = NSMutableAttributedString(attributedString: contentTextView.attributedText)
-        
-        attributedText.append(imageString)
-        
-        contentTextView.attributedText = attributedText
-    }
 }
