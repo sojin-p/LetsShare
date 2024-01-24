@@ -40,6 +40,7 @@ final class WritingViewController: BaseViewController {
         let view = UITextView()
         view.text = "내용을 입력하세요."
         view.font = .systemFont(ofSize: 16)
+        view.textColor = .systemGray4
         return view
     }()
     
