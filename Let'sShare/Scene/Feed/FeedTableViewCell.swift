@@ -69,12 +69,12 @@ final class FeedTableViewCell: BaseTableViewCell {
         thumbImageView.image = nil
         titleLabel.text = nil
         subTitleLabel.text = nil
-        commentslabel.text = nil
+//        commentslabel.text = nil
     }
     
     override func configure() {
         [stackView].forEach { contentView.addSubview($0) }
-        [thumbImageView, labelStackView, commentslabel].forEach { stackView.addArrangedSubview($0) }
+        [thumbImageView, labelStackView/*, commentslabel*/].forEach { stackView.addArrangedSubview($0) }
         [titleLabel, subTitleLabel].forEach { labelStackView.addArrangedSubview($0) }
     }
     
@@ -89,10 +89,10 @@ final class FeedTableViewCell: BaseTableViewCell {
             make.size.equalTo(60)
         }
         
-        commentslabel.snp.makeConstraints { make in
-            make.size.equalTo(40)
-            make.trailing.equalToSuperview()
-        }
+//        commentslabel.snp.makeConstraints { make in
+//            make.size.equalTo(40)
+//            make.trailing.equalToSuperview()
+//        }
     }
     
 }
