@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		230ACFB32B6297FA00E80B22 /* Interests+Enum.swift in Sources */ = {isa = PBXBuildFile; fileRef = 230ACFB22B6297FA00E80B22 /* Interests+Enum.swift */; };
 		231238F12B1DE34F0038BB1B /* InterestsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 231238F02B1DE34F0038BB1B /* InterestsViewController.swift */; };
 		2318AE3E2B4437B9002508B3 /* Kingfisher in Frameworks */ = {isa = PBXBuildFile; productRef = 2318AE3D2B4437B9002508B3 /* Kingfisher */; };
 		2318AE832B55563A002508B3 /* PostDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2318AE822B55563A002508B3 /* PostDetailViewController.swift */; };
@@ -53,6 +54,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		230ACFB22B6297FA00E80B22 /* Interests+Enum.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Interests+Enum.swift"; sourceTree = "<group>"; };
 		231238F02B1DE34F0038BB1B /* InterestsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InterestsViewController.swift; sourceTree = "<group>"; };
 		2318AE822B55563A002508B3 /* PostDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostDetailViewController.swift; sourceTree = "<group>"; };
 		2318AE842B56484D002508B3 /* PostDetailTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostDetailTableViewCell.swift; sourceTree = "<group>"; };
@@ -119,6 +121,7 @@
 				23FD16192B0898F600D16409 /* ValidationError+Enum.swift */,
 				232BC1FC2B15F41100290F67 /* UserDefaultsManager+Enum.swift */,
 				2318AE862B57B2D3002508B3 /* DareFormatType+Enum.swift */,
+				230ACFB22B6297FA00E80B22 /* Interests+Enum.swift */,
 			);
 			path = Enum;
 			sourceTree = "<group>";
@@ -423,6 +426,7 @@
 				23CACC362B01059B008AC1DD /* Image+Enum.swift in Sources */,
 				23CACC0F2B00E7B9008AC1DD /* SceneDelegate.swift in Sources */,
 				234A71C72B0CCFDA00B8E60B /* ViewModelType+Protocol.swift in Sources */,
+				230ACFB32B6297FA00E80B22 /* Interests+Enum.swift in Sources */,
 				234A71CB2B0CD2CE00B8E60B /* APIModel.swift in Sources */,
 				232BC1F72B15B46C00290F67 /* BaseTableViewCell.swift in Sources */,
 				234A71C92B0CD26100B8E60B /* API+Enum.swift in Sources */,
