@@ -26,7 +26,7 @@ final class InterestsViewController: BaseViewController {
 
     var completion: (() -> Void)?
     
-    let list = ["ALL", "맛집", "여행", "운동/스포츠", "문화/예술", "IT", "요리", "사회/정치", "영화/드라마", "교육", "자연/환경"]
+    let list = Interests.allCases
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -73,9 +73,13 @@ extension InterestsViewController: UITableViewDelegate, UITableViewDataSource {
         
         let cell = tableView.dequeueReusableCell(withIdentifier: "Cell", for: indexPath)
         
-        cell.textLabel?.text = list[indexPath.row]
+        cell.textLabel?.text = list[indexPath.row].rawValue
         
         return cell
+    }
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        print("====", list[indexPath.row].productID)
     }
     
 }
