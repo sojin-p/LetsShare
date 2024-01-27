@@ -59,6 +59,9 @@ final class FeedViewController: BaseViewController {
     }
     
     func requestPost() {
+        
+        Toast.startActivity.makeToast(self.view)
+        
         APIManager.shared.callRequest(type: PostDataResponse.self, api: .Post(next: "", limit: "20", productId: "letsShare_sojin_id"), errorType: AccessTokenError.self) { [weak self] response in
             
             switch response {
@@ -67,6 +70,7 @@ final class FeedViewController: BaseViewController {
                 self?.postData.data.append(contentsOf: success.data)
                 print("========= 포스트 :", self?.postData)
                 self?.tableView.reloadData()
+                Toast.hideActivity.makeToast(self?.view)
                 
             case .failure(let failure):
                 if let common = failure as? CommonError {
