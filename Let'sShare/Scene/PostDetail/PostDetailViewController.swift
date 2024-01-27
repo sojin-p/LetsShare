@@ -22,7 +22,10 @@ final class PostDetailViewController: BaseViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        
         setBackButton()
+        navigationController?.interactivePopGestureRecognizer?.delegate = self
+        
         view.backgroundColor = .pointYellow
         title = "상세화면"
         tableView.dataSource = self

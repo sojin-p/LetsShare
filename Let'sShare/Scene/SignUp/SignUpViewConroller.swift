@@ -9,7 +9,7 @@ import UIKit
 import RxSwift
 import TextFieldEffects
 
-final class SignUpViewConroller: BaseViewController {
+final class SignUpViewConroller: BaseViewController, UIGestureRecognizerDelegate {
     
     let requiredContainerView = WhiteAndShadowContainerView()
     
@@ -52,6 +52,9 @@ final class SignUpViewConroller: BaseViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        setBackButton()
+        navigationController?.interactivePopGestureRecognizer?.delegate = self
         
         DispatchQueue.main.async {
             self.nicknameTextField.becomeFirstResponder()

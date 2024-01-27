@@ -9,7 +9,7 @@ import UIKit
 import RxSwift
 import RxCocoa
 
-final class LoginViewController: BaseViewController {
+final class LoginViewController: BaseViewController, UIGestureRecognizerDelegate {
     
     let iconImageView = {
         let view = UIImageView()
@@ -64,6 +64,9 @@ final class LoginViewController: BaseViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        setBackButton()
+        navigationController?.interactivePopGestureRecognizer?.delegate = self
         
         DispatchQueue.main.asyncAfter(deadline: .now() + 0.6) {
             self.emailTextField.becomeFirstResponder()
