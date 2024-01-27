@@ -64,14 +64,16 @@ final class SignUpViewModel: ViewModelType {
                     switch response {
                     case .success(let success):
                         print("==== 메세지: ", success)
-                        //화면 전환
+                        isAvailable.onNext(true)
+                        //사용 가능 얼럿
+                        
                     case .failure(let failure):
                         if let common = failure as? CommonError {
                             print("=== 에러: ", common.errorDescription)
                         } else if let error = failure as? UserError {
                             print("=== 에러: ", error.errorDescription)
                         }
-                        //얼럿
+                        //사용 불가 얼럿
                     }
                 }
             }
