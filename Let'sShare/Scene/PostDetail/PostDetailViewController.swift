@@ -22,6 +22,7 @@ final class PostDetailViewController: BaseViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        setBackButton()
         view.backgroundColor = .pointYellow
         title = "상세화면"
         tableView.dataSource = self
@@ -73,7 +74,7 @@ extension PostDetailViewController: UITableViewDataSource {
     
 }
 
-extension PostDetailViewController {
+extension PostDetailViewController: UIGestureRecognizerDelegate {
     
     func addImagesToTextView(textView: UITextView) {
         
@@ -99,4 +100,15 @@ extension PostDetailViewController {
         } //for in
     }
     
+    func setBackButton() {
+        navigationController?.interactivePopGestureRecognizer?.delegate = self
+        
+        let backButton = UIBarButtonItem(image: UIImage(systemName: "chevron.left"), style: .plain, target: self, action: #selector(backBarbuttonClicked))
+        backButton.tintColor = .black
+        navigationItem.leftBarButtonItem =  backButton
+    }
+    
+    @objc private func backBarbuttonClicked() {
+        navigationController?.popViewController(animated: true)
+    }
 }
