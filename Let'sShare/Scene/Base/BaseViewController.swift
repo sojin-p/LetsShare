@@ -7,6 +7,7 @@
 
 import UIKit
 import SnapKit
+import Toast
 
 class BaseViewController: UIViewController {
     
@@ -62,5 +63,12 @@ class BaseViewController: UIViewController {
             image.draw(in: CGRect(origin: .zero, size: newSize))
         }
     }
+    
+    private var toastStyle = {
+        var view = ToastStyle()
+        view.backgroundColor = Color.Point.navy
+        ToastManager.shared.style = view
+        return view
+    }()
     
 }
