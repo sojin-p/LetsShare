@@ -51,19 +51,20 @@ final class PostDetailTableViewCell: BaseTableViewCell {
         }
         
         userLabel.snp.makeConstraints { make in
-            make.top.equalTo(titleLabel.snp.bottom).offset(8)
+            make.top.equalTo(titleLabel.snp.bottom).offset(12)
             make.horizontalEdges.equalTo(titleLabel)
         }
         
         lineView.snp.makeConstraints { make in
-            make.top.equalTo(userLabel.snp.bottom).offset(16)
+            make.top.equalTo(userLabel.snp.bottom).offset(20)
             make.horizontalEdges.equalTo(titleLabel)
             make.height.equalTo(1)
         }
         
         contentTextView.snp.makeConstraints { make in
-            make.top.equalTo(lineView.snp.bottom).offset(15)
-            make.horizontalEdges.equalTo(titleLabel)
+            make.top.equalTo(lineView.snp.bottom).offset(19)
+            make.trailing.equalTo(titleLabel)
+            make.leading.equalTo(titleLabel).offset(-4)
             make.bottom.equalToSuperview().offset(-20)
         }
         
