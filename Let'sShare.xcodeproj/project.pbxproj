@@ -8,6 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		230ACFB32B6297FA00E80B22 /* Interests+Enum.swift in Sources */ = {isa = PBXBuildFile; fileRef = 230ACFB22B6297FA00E80B22 /* Interests+Enum.swift */; };
+		230ACFB62B64E5A700E80B22 /* Toast in Frameworks */ = {isa = PBXBuildFile; productRef = 230ACFB52B64E5A700E80B22 /* Toast */; };
+		230ACFB82B64F45200E80B22 /* Toast+Enum.swift in Sources */ = {isa = PBXBuildFile; fileRef = 230ACFB72B64F45200E80B22 /* Toast+Enum.swift */; };
 		231238F12B1DE34F0038BB1B /* InterestsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 231238F02B1DE34F0038BB1B /* InterestsViewController.swift */; };
 		2318AE3E2B4437B9002508B3 /* Kingfisher in Frameworks */ = {isa = PBXBuildFile; productRef = 2318AE3D2B4437B9002508B3 /* Kingfisher */; };
 		2318AE832B55563A002508B3 /* PostDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2318AE822B55563A002508B3 /* PostDetailViewController.swift */; };
@@ -55,6 +57,7 @@
 
 /* Begin PBXFileReference section */
 		230ACFB22B6297FA00E80B22 /* Interests+Enum.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Interests+Enum.swift"; sourceTree = "<group>"; };
+		230ACFB72B64F45200E80B22 /* Toast+Enum.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Toast+Enum.swift"; sourceTree = "<group>"; };
 		231238F02B1DE34F0038BB1B /* InterestsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InterestsViewController.swift; sourceTree = "<group>"; };
 		2318AE822B55563A002508B3 /* PostDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostDetailViewController.swift; sourceTree = "<group>"; };
 		2318AE842B56484D002508B3 /* PostDetailTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostDetailTableViewCell.swift; sourceTree = "<group>"; };
@@ -102,6 +105,7 @@
 				234A71C32B0C7C4F00B8E60B /* RxMoya in Frameworks */,
 				23CACC322B010376008AC1DD /* RxCocoa in Frameworks */,
 				23CACC2C2B010327008AC1DD /* SnapKit in Frameworks */,
+				230ACFB62B64E5A700E80B22 /* Toast in Frameworks */,
 				23CACC342B010376008AC1DD /* RxSwift in Frameworks */,
 				2318AE3E2B4437B9002508B3 /* Kingfisher in Frameworks */,
 				23B1A2672B1F0AB10090B849 /* SideMenu in Frameworks */,
@@ -122,6 +126,7 @@
 				232BC1FC2B15F41100290F67 /* UserDefaultsManager+Enum.swift */,
 				2318AE862B57B2D3002508B3 /* DareFormatType+Enum.swift */,
 				230ACFB22B6297FA00E80B22 /* Interests+Enum.swift */,
+				230ACFB72B64F45200E80B22 /* Toast+Enum.swift */,
 			);
 			path = Enum;
 			sourceTree = "<group>";
@@ -334,6 +339,7 @@
 				234A71C22B0C7C4F00B8E60B /* RxMoya */,
 				23B1A2662B1F0AB10090B849 /* SideMenu */,
 				2318AE3D2B4437B9002508B3 /* Kingfisher */,
+				230ACFB52B64E5A700E80B22 /* Toast */,
 			);
 			productName = "Let'sShare";
 			productReference = 23CACC092B00E7B9008AC1DD /* Let'sShare.app */;
@@ -370,6 +376,7 @@
 				234A71BF2B0C7C4F00B8E60B /* XCRemoteSwiftPackageReference "Moya" */,
 				23B1A2652B1F0AB10090B849 /* XCRemoteSwiftPackageReference "SideMenu" */,
 				2318AE3C2B4437B9002508B3 /* XCRemoteSwiftPackageReference "Kingfisher" */,
+				230ACFB42B64E5A700E80B22 /* XCRemoteSwiftPackageReference "Toast-Swift" */,
 			);
 			productRefGroup = 23CACC0A2B00E7B9008AC1DD /* Products */;
 			projectDirPath = "";
@@ -412,6 +419,7 @@
 				232BC1F92B15B4A600290F67 /* ReusableView+Protocol.swift in Sources */,
 				236D15032B09188F00665205 /* WelcomeViewController.swift in Sources */,
 				23CACC252B00FCD6008AC1DD /* Color+Enum.swift in Sources */,
+				230ACFB82B64F45200E80B22 /* Toast+Enum.swift in Sources */,
 				234A71A72B0B996E00B8E60B /* APIKey.swift in Sources */,
 				23FD161C2B08CE0500D16409 /* LoginViewModel.swift in Sources */,
 				236D14F92B08ECA400665205 /* SignUpViewConroller.swift in Sources */,
@@ -653,6 +661,14 @@
 /* End XCConfigurationList section */
 
 /* Begin XCRemoteSwiftPackageReference section */
+		230ACFB42B64E5A700E80B22 /* XCRemoteSwiftPackageReference "Toast-Swift" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/scalessec/Toast-Swift.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 5.1.0;
+			};
+		};
 		2318AE3C2B4437B9002508B3 /* XCRemoteSwiftPackageReference "Kingfisher" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/onevcat/Kingfisher.git";
@@ -704,6 +720,11 @@
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
+		230ACFB52B64E5A700E80B22 /* Toast */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 230ACFB42B64E5A700E80B22 /* XCRemoteSwiftPackageReference "Toast-Swift" */;
+			productName = Toast;
+		};
 		2318AE3D2B4437B9002508B3 /* Kingfisher */ = {
 			isa = XCSwiftPackageProductDependency;
 			package = 2318AE3C2B4437B9002508B3 /* XCRemoteSwiftPackageReference "Kingfisher" */;
