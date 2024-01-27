@@ -79,15 +79,22 @@ final class LoginViewController: BaseViewController {
     @objc func loginButtonClicked() {
         let data = Login(email: emailTextField.text ?? "", password: passwordTextField.text ?? "")
         
+        Toast.startActivity.makeToast(self.view)
+        
         APIManager.shared.callRequest(type: LoginResponse.self, api: .login(data: data), errorType: UserError.self) { [weak self] response in
             switch response {
             case .success(let success):
+                
                 print("==== 로그인 성공 메세지: ", success.token)
                 UserDefaultsManager.access.myValue = success.token
                 UserDefaultsManager.refresh.myValue = success.refreshToken
-                //화면 전환
+                
                 self?.changeRootVC(FeedViewController())
+                
             case .failure(let failure):
+                
+                Toast.hideActivity.makeToast(self?.view)
+                
                 if let common = failure as? CommonError {
                     print("=== 공통 에러: ", common.errorDescription)
                 } else if let error = failure as? UserError {
