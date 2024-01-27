@@ -100,15 +100,4 @@ extension PostDetailViewController: UIGestureRecognizerDelegate {
         } //for in
     }
     
-    func setBackButton() {
-        navigationController?.interactivePopGestureRecognizer?.delegate = self
-        
-        let backButton = UIBarButtonItem(image: UIImage(systemName: "chevron.left"), style: .plain, target: self, action: #selector(backBarbuttonClicked))
-        backButton.tintColor = .black
-        navigationItem.leftBarButtonItem =  backButton
-    }
-    
-    @objc private func backBarbuttonClicked() {
-        navigationController?.popViewController(animated: true)
-    }
 }
