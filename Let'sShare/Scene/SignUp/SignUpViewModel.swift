@@ -73,14 +73,16 @@ final class SignUpViewModel: ViewModelType {
                         } else if let error = failure as? UserError {
                             print("=== 에러: ", error.errorDescription)
                         }
+                        isAvailable.onNext(false)
                         //사용 불가 얼럿
                     }
                 }
             }
             .disposed(by: disposeBag)
         
-        let validation = Observable.combineLatest(nickname, password, checkPassword, isAvailable) { nickname, password, checkPassword, isAvailable in
-            return nickname && password && checkPassword && isAvailable
+        let validation = Observable.combineLatest(nickname, password, checkPassword, isAvailable, email) { nickname, password, checkPassword, isAvailable, email in
+            print("====: ", nickname, isAvailable, password, checkPassword, email)
+            return nickname && password && checkPassword && isAvailable && email
         }
         
         return Output(
