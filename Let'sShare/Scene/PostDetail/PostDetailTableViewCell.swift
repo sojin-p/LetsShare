@@ -12,7 +12,7 @@ final class PostDetailTableViewCell: BaseTableViewCell {
     let titleLabel = {
         let view = UILabel()
         view.text = "타이틀입니다"
-        view.font = .systemFont(ofSize: 18, weight: .regular)
+        view.font = .systemFont(ofSize: 20, weight: .regular)
         return view
     }()
     
