@@ -48,15 +48,15 @@ final class LoginViewController: BaseViewController, UIGestureRecognizerDelegate
         return view
     }()
     
-    let finePasswordLabel = {
-        let view = UILabel()
-        view.text = "아이디 / 비밀번호 찾기"
-        view.textColor = Color.Point.navy
-        view.font = .systemFont(ofSize: 16, weight: .regular)
-        view.isUserInteractionEnabled = false
-        view.textAlignment = .right
-        return view
-    }()
+//    let finePasswordLabel = {
+//        let view = UILabel()
+//        view.text = "아이디 / 비밀번호 찾기"
+//        view.textColor = Color.Point.navy
+//        view.font = .systemFont(ofSize: 16, weight: .regular)
+//        view.isUserInteractionEnabled = false
+//        view.textAlignment = .right
+//        return view
+//    }()
     
     let disposeBag = DisposeBag()
     
@@ -178,7 +178,7 @@ final class LoginViewController: BaseViewController, UIGestureRecognizerDelegate
     override func configure() {
         super.configure()
         
-        [iconImageView, containerView, finePasswordLabel].forEach { view.addSubview($0) }
+        [iconImageView, containerView].forEach { view.addSubview($0) }
         [emailTextField, emailResultLabel, passwordTextField, passwordResultLabel, loginButton].forEach { containerView.addSubview($0) }
     }
     
@@ -224,10 +224,10 @@ final class LoginViewController: BaseViewController, UIGestureRecognizerDelegate
             make.bottom.equalToSuperview().offset(-25)
         }
         
-        finePasswordLabel.snp.makeConstraints { make in
-            make.top.equalTo(containerView.snp.bottom).offset(15)
-            make.trailing.equalTo(containerView).offset(-5)
-        }
+//        finePasswordLabel.snp.makeConstraints { make in
+//            make.top.equalTo(containerView.snp.bottom).offset(15)
+//            make.trailing.equalTo(containerView).offset(-5)
+//        }
     }
     
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
