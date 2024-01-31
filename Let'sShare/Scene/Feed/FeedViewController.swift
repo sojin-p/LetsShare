@@ -96,6 +96,13 @@ final class FeedViewController: BaseViewController {
         let vc = WritingViewController()
         let nav = UINavigationController(rootViewController: vc)
         nav.modalPresentationStyle = .fullScreen
+        
+        vc.completion = { [weak self] in
+            print("등록 완료!")
+            self?.postData = PostDataResponse(data: [], next_cursor: "")
+            self?.requestPost()
+        }
+        
         present(nav, animated: true)
     }
     
