@@ -7,23 +7,6 @@
 
 import Foundation
 
-enum NetworkError: Error {
-    case common(_ common: CommonError)
-    case user(_ user: UserError)
-    case refresh(_ token: AccessTokenError)
-
-    var errorDescription: String {
-        switch self {
-        case .common(let commonError):
-            return commonError.errorDescription
-        case .user(let userError):
-            return userError.errorDescription
-        case .refresh(let token):
-            return token.errorDescription
-        }
-    }
-}
-
 //공통 에러
 enum CommonError: Int, Error {
     case unathorized = 420
