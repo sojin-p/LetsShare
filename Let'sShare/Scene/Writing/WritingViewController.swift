@@ -55,6 +55,8 @@ final class WritingViewController: BaseViewController {
         view.configuration = config
         return view
     }()
+    
+    var completion: (() -> Void)?
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -128,6 +130,9 @@ extension WritingViewController {
             case .success(let success):
                 print("==== 메세지: ", success)
                 //메인 게시글로 화면 전환
+                
+                self?.completion?()
+                self?.dismiss(animated: true)
                 
             case .failure(let failure):
                 if let common = failure as? CommonError {
