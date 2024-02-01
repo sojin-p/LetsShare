@@ -249,7 +249,7 @@ extension WritingViewController: PHPickerViewControllerDelegate {
     }
     
     func imageToData(_ image: UIImage) -> Data {
-        guard let imageData = image.jpegData(compressionQuality: 1.0) else { return Data() }
+        guard let imageData = image.jpegData(compressionQuality: 0.9) else { return Data() }
         return imageData
     }
     
