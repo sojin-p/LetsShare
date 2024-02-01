@@ -67,6 +67,7 @@ final class FeedTableViewCell: BaseTableViewCell {
     
     override func prepareForReuse() {
         thumbImageView.image = nil
+        thumbImageView.isHidden = false
         titleLabel.text = nil
         subTitleLabel.text = nil
 //        commentslabel.text = nil
