@@ -27,7 +27,7 @@ final class PostDetailViewController: BaseViewController {
         navigationController?.interactivePopGestureRecognizer?.delegate = self
         
         view.backgroundColor = .pointYellow
-        title = "상세화면"
+        title = "자유게시판"
         tableView.dataSource = self
         tableView.reloadData()
     }

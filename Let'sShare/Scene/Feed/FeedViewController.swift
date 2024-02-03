@@ -49,6 +49,8 @@ final class FeedViewController: BaseViewController {
         tableView.delegate = self
         tableView.dataSource = self
         
+        title = "자유게시판"
+        
         requestPost()
         
         addPostButton.addTarget(self, action: #selector(addBarButtonClicked), for: .touchUpInside)

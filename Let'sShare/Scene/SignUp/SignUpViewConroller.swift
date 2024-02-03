@@ -53,6 +53,8 @@ final class SignUpViewConroller: BaseViewController, UIGestureRecognizerDelegate
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        title = "회원가입"
+        
         setBackButton()
         navigationController?.interactivePopGestureRecognizer?.delegate = self
         

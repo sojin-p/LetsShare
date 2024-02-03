@@ -65,6 +65,8 @@ final class LoginViewController: BaseViewController, UIGestureRecognizerDelegate
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        title = "로그인"
+        
         setBackButton()
         navigationController?.interactivePopGestureRecognizer?.delegate = self
         
