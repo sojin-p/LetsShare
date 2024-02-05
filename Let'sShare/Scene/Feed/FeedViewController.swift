@@ -41,6 +41,8 @@ final class FeedViewController: BaseViewController {
     
     var postData = PostDataResponse(data: [], next_cursor: "")
     
+    var nextCursur = ""
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -64,13 +66,13 @@ final class FeedViewController: BaseViewController {
         
         Toast.startActivity.makeToast(self.view)
         
-        APIManager.shared.callRequest(type: PostDataResponse.self, api: .Post(next: "", limit: "20", productId: "letsShare_sojin_id"), errorType: AccessTokenError.self) { [weak self] response in
+        APIManager.shared.callRequest(type: PostDataResponse.self, api: .Post(next: nextCursur, limit: "20", productId: "letsShare_sojin_id"), errorType: AccessTokenError.self) { [weak self] response in
             
             switch response {
             case .success(let success):
 //                print("==== 메세지: ", success)
                 self?.postData.data.append(contentsOf: success.data)
-                print("========= 포스트 :", self?.postData)
+                self?.nextCursur = success.next_cursor
                 self?.tableView.reloadData()
                 Toast.hideActivity.makeToast(self?.view)
                 
@@ -155,8 +157,15 @@ extension FeedViewController: UITableViewDelegate, UITableViewDataSource {
             return requestBody
         }
         
+        let retryStrategy = DelayRetryStrategy(maxRetryCount: 2, retryInterval: .seconds(3))
+        
         if let firstImage = post.image.first, let url = URL(string: BaseURL.devURL + firstImage) {
-            let options: KingfisherOptionsInfo = [.requestModifier(imageDownloadRequest)]
+            let options: KingfisherOptionsInfo = [
+                .requestModifier(imageDownloadRequest),
+                .transition(.fade(1.2))//,
+//                .retryStrategy(retryStrategy)
+            ]
+            cell.thumbImageView.kf.indicatorType = .activity
             cell.thumbImageView.kf.setImage(with: url, options: options)
             print("=====", url)
         } else {
@@ -175,6 +184,19 @@ extension FeedViewController: UITableViewDelegate, UITableViewDataSource {
         vc.postData = postData.data[indexPath.row]
         navigationController?.pushViewController(vc, animated: true)
         
+    }
+    
+    func tableView(_ tableView: UITableView, willDisplay cell: UITableViewCell, forRowAt indexPath: IndexPath) {
+        let lastSectionIndex = tableView.numberOfSections - 1
+            let lastRowIndex = tableView.numberOfRows(inSection: lastSectionIndex) - 1
+            
+            if indexPath.section == lastSectionIndex && indexPath.row == lastRowIndex {
+                if nextCursur != "0" {
+                    requestPost()
+                } else {
+                    print("끝나버렸슈")
+                }
+            }
     }
     
 }
