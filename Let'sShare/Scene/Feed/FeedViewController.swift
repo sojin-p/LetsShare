@@ -194,7 +194,7 @@ extension FeedViewController: UITableViewDelegate, UITableViewDataSource {
                 if nextCursur != "0" {
                     requestPost()
                 } else {
-                    print("끝나버렸슈")
+                    view.makeToast("더 이상 게시글이 없습니다.", duration: 1.2, position: .bottom)
                 }
             }
     }
