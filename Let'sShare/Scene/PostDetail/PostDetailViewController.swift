@@ -63,7 +63,7 @@ extension PostDetailViewController: UITableViewDataSource {
         cell.contentTextView.text = postData.content
         cell.titleLabel.text = postData.title
         
-        let timeToDate = postData.time.toDate(to: .full) ?? Date()
+        let timeToDate = postData.time.toDate(to: .serverDateISO8601) ?? Date()
         let timeToString = timeToDate.toString(of: .full)
         cell.userLabel.text = "\(postData.creator.nick)   \(timeToString)"
     
