@@ -11,12 +11,14 @@ enum DateFormatType {
     case full
     case withoutTime
     case justTime
+    case serverDateISO8601
     
     var description: String {
         switch self {
         case .full: "yyyy.MM.dd  HH:mm"
         case .withoutTime: "yyyy.MM.dd"
         case .justTime: "HH:mm"
+        case .serverDateISO8601: "yyyy-MM-dd'T'HH:mm:ss.SSSZ"
         }
     }
 }
@@ -37,7 +39,7 @@ extension String {
     func toDate(to type: DateFormatType) -> Date? {
         let formatter = DateFormatter()
         formatter.timeZone = TimeZone(identifier: TimeZone.current.identifier)
-        formatter.dateFormat = "yyyy-MM-dd'T'HH:mm:ss.SSSZ"
+        formatter.dateFormat = type.description
         return formatter.date(from: self)
     }
     

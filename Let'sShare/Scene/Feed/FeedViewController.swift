@@ -145,7 +145,7 @@ extension FeedViewController: UITableViewDelegate, UITableViewDataSource {
         
         cell.titleLabel.text = post.title
         
-        let timeToDate = post.time.toDate(to: .full) ?? Date()
+        let timeToDate = post.time.toDate(to: .serverDateISO8601) ?? Date()
         let timeToString = timeToDate.toString(of: .full)
         
         cell.subTitleLabel.text = "\(post.creator.nick)   \(timeToString)"
