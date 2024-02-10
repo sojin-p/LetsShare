@@ -23,6 +23,13 @@ class BaseViewController: UIViewController {
     
     func setConstraints() { }
     
+    func showAlert(title: String, massage: String?) {
+        let alert = UIAlertController(title: title, message: massage, preferredStyle: .alert)
+        let ok = UIAlertAction(title: "확인", style: .default)
+        alert.addAction(ok)
+        present(alert, animated: true)
+    }
+    
     func changeRootVC(_ vc: UIViewController) {
         let nav = UINavigationController(rootViewController: vc)
         let windowScene = UIApplication.shared.connectedScenes.first as? UIWindowScene
